@@ -1,0 +1,9 @@
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\bin\Debug\EmployeeManagement_Interfaces.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\bin\Debug\EmployeeManagement_Interfaces.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\obj\Debug\EmployeeManagement_Interfaces.csprojAssemblyReference.cache
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\obj\Debug\EmployeeManagement_Interfaces.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\obj\Debug\EmployeeManagement_Interfaces.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\obj\Debug\EmployeeManagement_Interfaces.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\bin\Debug\EmployeeManagement_Models.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\bin\Debug\EmployeeManagement_Models.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement_Interfaces\obj\Debug\EmployeeManagement_Interfaces.csproj.CopyComplete

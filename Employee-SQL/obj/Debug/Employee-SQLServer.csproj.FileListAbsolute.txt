@@ -1,0 +1,5 @@
+D:\GitHub\EmployeeManagement\Employee-SQL\bin\Debug\Employee-SQLServer.dll
+D:\GitHub\EmployeeManagement\Employee-SQL\bin\Debug\Employee-SQLServer.pdb
+D:\GitHub\EmployeeManagement\Employee-SQL\obj\Debug\Employee-SQLServer.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\Employee-SQL\obj\Debug\Employee-SQLServer.dll
+D:\GitHub\EmployeeManagement\Employee-SQL\obj\Debug\Employee-SQLServer.pdb

@@ -1,0 +1,11 @@
+D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\Department-InMemory.dll
+D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\Department-InMemory.pdb
+D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.dll
+D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.pdb
+D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Interfaces.dll
+D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Models.dll
+D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Interfaces.pdb
+D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Models.pdb
+D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csprojAssemblyReference.cache
+D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csproj.CopyComplete

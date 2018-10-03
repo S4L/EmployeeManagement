@@ -1,0 +1,11 @@
+D:\GitHub\EmployeeManagement\Gender-InMemory\bin\Debug\Gender-InMemory.dll
+D:\GitHub\EmployeeManagement\Gender-InMemory\bin\Debug\Gender-InMemory.pdb
+D:\GitHub\EmployeeManagement\Gender-InMemory\obj\Debug\Gender-InMemory.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\Gender-InMemory\obj\Debug\Gender-InMemory.dll
+D:\GitHub\EmployeeManagement\Gender-InMemory\obj\Debug\Gender-InMemory.pdb
+D:\GitHub\EmployeeManagement\Gender-InMemory\bin\Debug\EmployeeManagement_Interfaces.dll
+D:\GitHub\EmployeeManagement\Gender-InMemory\bin\Debug\EmployeeManagement_Models.dll
+D:\GitHub\EmployeeManagement\Gender-InMemory\bin\Debug\EmployeeManagement_Interfaces.pdb
+D:\GitHub\EmployeeManagement\Gender-InMemory\bin\Debug\EmployeeManagement_Models.pdb
+D:\GitHub\EmployeeManagement\Gender-InMemory\obj\Debug\Gender-InMemory.csprojAssemblyReference.cache
+D:\GitHub\EmployeeManagement\Gender-InMemory\obj\Debug\Gender-InMemory.csproj.CopyComplete

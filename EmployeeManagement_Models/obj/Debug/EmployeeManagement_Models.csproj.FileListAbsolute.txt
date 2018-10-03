@@ -1,0 +1,6 @@
+D:\GitHub\EmployeeManagement\EmployeeManagement_Models\bin\Debug\EmployeeManagement_Models.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_Models\bin\Debug\EmployeeManagement_Models.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement_Models\obj\Debug\EmployeeManagement_Models.csprojAssemblyReference.cache
+D:\GitHub\EmployeeManagement\EmployeeManagement_Models\obj\Debug\EmployeeManagement_Models.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\EmployeeManagement_Models\obj\Debug\EmployeeManagement_Models.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_Models\obj\Debug\EmployeeManagement_Models.pdb

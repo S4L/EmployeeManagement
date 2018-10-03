@@ -1,0 +1,6 @@
+D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeManagement_EmployeeBLL.dll
+D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeManagement_EmployeeBLL.pdb
+D:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.csprojAssemblyReference.cache
+D:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.dll
+D:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.pdb

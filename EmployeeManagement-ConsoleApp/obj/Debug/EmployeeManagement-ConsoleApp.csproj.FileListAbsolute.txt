@@ -1,0 +1,7 @@
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\bin\Debug\EmployeeManagement-ConsoleApp.exe.config
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\bin\Debug\EmployeeManagement-ConsoleApp.exe
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\bin\Debug\EmployeeManagement-ConsoleApp.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\obj\Debug\EmployeeManagement-ConsoleApp.csprojAssemblyReference.cache
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\obj\Debug\EmployeeManagement-ConsoleApp.csproj.CoreCompileInputs.cache
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\obj\Debug\EmployeeManagement-ConsoleApp.exe
+D:\GitHub\EmployeeManagement\EmployeeManagement-ConsoleApp\obj\Debug\EmployeeManagement-ConsoleApp.pdb
