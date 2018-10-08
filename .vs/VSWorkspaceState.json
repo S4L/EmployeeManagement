@@ -6,10 +6,10 @@
     "\\Employee-SQL",
     "\\EmployeeBLL",
     "\\EmployeeManagement-ConsoleApp",
+    "\\EmployeeManagement_DAL_Test",
+    "\\EmployeeManagement_DAL_Test\\InMemory",
     "\\EmployeeManagement_Interfaces",
-    "\\EmployeeManager-WPF",
-    "\\EmployeeManager-WPF\\ViewModels",
-    "\\EmployeeManager-WPF\\Views"
+    "\\EmployeeManager-WPF"
   ],
   "SelectedNode": "\\EmployeeManager-WPF\\ViewModels\\EmployeeViewModel.cs",
   "PreviewInSolutionExplorer": false
