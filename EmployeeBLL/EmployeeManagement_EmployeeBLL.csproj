@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,6 +44,20 @@
   <ItemGroup>
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagement_DAL_Test\EmployeeManagement_DAL_Test.csproj">
+      <Project>{5c856b31-2f71-4f86-adeb-eefbee5fcf80}</Project>
+      <Name>EmployeeManagement_DAL_Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeManagement_Interfaces\EmployeeManagement_Interfaces.csproj">
+      <Project>{6fe0e62d-3e1d-4196-b866-3c4b357df7f5}</Project>
+      <Name>EmployeeManagement_Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
+      <Project>{B4D9EF12-6CBC-4232-8723-5882D2D12A72}</Project>
+      <Name>EmployeeManagement_Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

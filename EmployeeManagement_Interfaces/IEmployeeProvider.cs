@@ -6,10 +6,10 @@ namespace EmployeeManagement_Interfaces
     public interface IEmployeeProvider
     {
         void OpenConnection();
-        List<Employee> GetAllItems();
-        Employee GetAllItemById(int targetID);
-        void AddItem(Employee employee);
-        void UpdateItem(int targetID, Employee employee);
-        void DeleteItem(int targetID);
+        List<Employee> GetAllEmployees();
+        Employee GetEmployeeByID(int targetID);
+        void CreateEmployee(Employee employee);
+        void UpdateEmployee(int targetID, Employee employee);
+        void DeleteEmployee(int targetID);
     }
 }

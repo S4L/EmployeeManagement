@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gender-InMemory", "Gender-I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee-SQLServer", "Employee-SQL\Employee-SQLServer.csproj", "{2C587DCF-1EA9-44B7-B408-FFFDE40A86A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee-InMemory", "Employee-InMemory\Employee-InMemory.csproj", "{BE75AA22-317F-40BF-BEBB-F1435F844D70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee_Memory", "Employee-InMemory\Employee_Memory.csproj", "{BE75AA22-317F-40BF-BEBB-F1435F844D70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department-SQLServer", "Department-SQLServer\Department-SQLServer.csproj", "{C8CF3436-8157-4EE3-9BDC-4FF74685F010}"
 EndProject

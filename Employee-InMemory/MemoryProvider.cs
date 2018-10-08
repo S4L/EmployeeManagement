@@ -3,11 +3,11 @@ using EmployeeManagement_Models;
 using System.Collections.Generic;
 using System;
 
-namespace Employee_InMemory
+namespace Employee_Memory
 {
-    public class EmployeeInMemory : IEmployeeProvider
+    public class MemoryProvider : IEmployeeProvider
     {
-        List<Employee> employees = new List<Employee>
+        private List<Employee> employees = new List<Employee>
         {
             new Employee{Id=1, FirstName="Jarvis",LastName="Vision",Email="jarvis@gmail.com",Phone="234-432-5645",DepartmentId=2,GenderId=1},
             new Employee{Id=2, FirstName="Jean",LastName="Grey",Email="jGrey@yahoo.com",Phone="458-789-2365",DepartmentId=4,GenderId=1},
@@ -16,21 +16,21 @@ namespace Employee_InMemory
             new Employee{Id=5, FirstName="Tony",LastName="Stark",Email="ironman@gmail.com",Phone="125-745-2365",DepartmentId=3,GenderId=1}
         };
 
-        public void AddItem(Employee employee)
+        public void CreateEmployee(Employee employee)
         {
             employees.Add(employee);
         }
 
-        public void DeleteItem(int targetID)
+        public void DeleteEmployee(int targetID)
         {
             employees.RemoveAt(targetID);
         }
 
-        public Employee GetAllItemById(int targetID)
+        public Employee GetEmployeeByID(int targetID)
         {
             try
             {
-                return employees[targetID];
+                return employees.Find(x => x.Id == targetID);
             }
             catch
             {
@@ -38,7 +38,7 @@ namespace Employee_InMemory
             }
         }
 
-        public List<Employee> GetAllItems()
+        public List<Employee> GetAllEmployees()
         {
             return employees;
         }
@@ -48,7 +48,7 @@ namespace Employee_InMemory
             throw new System.NotImplementedException();
         }
 
-        public void UpdateItem(int targetID, Employee employee)
+        public void UpdateEmployee(int targetID, Employee employee)
         {
             try
             {
