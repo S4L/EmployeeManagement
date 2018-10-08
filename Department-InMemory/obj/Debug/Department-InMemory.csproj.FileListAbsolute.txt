@@ -9,3 +9,14 @@ D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_In
 D:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Models.pdb
 D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csprojAssemblyReference.cache
 D:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csproj.CopyComplete
+F:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\Department-InMemory.dll
+F:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\Department-InMemory.pdb
+F:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Interfaces.dll
+F:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Models.dll
+F:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Interfaces.pdb
+F:\GitHub\EmployeeManagement\Department-InMemory\bin\Debug\EmployeeManagement_Models.pdb
+F:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csprojResolveAssemblyReference.cache
+F:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csproj.CoreCompileInputs.cache
+F:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.csproj.CopyComplete
+F:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.dll
+F:\GitHub\EmployeeManagement\Department-InMemory\obj\Debug\Department-InMemory.pdb
