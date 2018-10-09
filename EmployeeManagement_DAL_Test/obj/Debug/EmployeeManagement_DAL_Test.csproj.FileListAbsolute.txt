@@ -36,5 +36,5 @@ F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManag
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.csproj.CopyComplete
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.pdb
-D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Employee-MemoryProvider.dll
-D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Employee-MemoryProvider.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.pdb

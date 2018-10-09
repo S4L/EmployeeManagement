@@ -56,8 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -65,7 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -94,12 +95,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeBLL\EmployeeManagement_EmployeeBLL.csproj">
+    <ProjectReference Include="..\EmployeeBLL\EmployeeManagementBLL.csproj">
       <Project>{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}</Project>
-      <Name>EmployeeManagement_EmployeeBLL</Name>
+      <Name>EmployeeManagementBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
+      <Project>{b4d9ef12-6cbc-4232-8723-5882d2d12a72}</Project>
+      <Name>EmployeeManagement_Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

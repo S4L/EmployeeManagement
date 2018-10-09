@@ -6,6 +6,6 @@ namespace EmployeeManagement_Interfaces
     public interface IGenderProvider
     {
         void OpenConnection();
-        List<Gender> GetAllItems();
+        List<GenderCommon> GetAllItems();
     }
 }

@@ -36,5 +36,5 @@ F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBL
 F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.csproj.CopyComplete
 F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.dll
 F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.pdb
-D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Employee-MemoryProvider.dll
-D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Employee-MemoryProvider.pdb
+D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeMemoryProvider.dll
+D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeMemoryProvider.pdb

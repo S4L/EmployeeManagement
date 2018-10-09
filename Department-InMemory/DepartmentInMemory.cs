@@ -2,19 +2,19 @@
 using EmployeeManagement_Interfaces;
 using EmployeeManagement_Models;
 
-namespace Department_InMemory
+namespace DepartmentMemoryProvider
 {
     public class DepartmentInMemory : IDepartmentProvider
     {
-        public List<Department> GetAllItems()
+        public List<DepartmentCommon> GetAllDepartments()
         {
-            return new List<Department>
+            return new List<DepartmentCommon>
             {
-                new Department{ID = 1, Name ="Sales"},
-                new Department{ID = 2, Name ="Customer Support"},
-                new Department{ID = 3, Name ="IT"},
-                new Department{ID = 4, Name ="Production & Quality Assurance"},
-                new Department{ID = 5, Name ="Finance"}
+                new DepartmentCommon{ID = 1, Name ="Sales"},
+                new DepartmentCommon{ID = 2, Name ="Customer Support"},
+                new DepartmentCommon{ID = 3, Name ="IT"},
+                new DepartmentCommon{ID = 4, Name ="Production & Quality Assurance"},
+                new DepartmentCommon{ID = 5, Name ="Finance"}
             };
         }
 

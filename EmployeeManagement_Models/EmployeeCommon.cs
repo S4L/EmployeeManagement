@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement_Models
 {
-    public class Employee
+    public class EmployeeCommon
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
