@@ -3,7 +3,7 @@ using EmployeeManagement_Models;
 using System.Collections.Generic;
 using System;
 
-namespace Employee_Memory
+namespace EmployeeMemoryProvider
 {
     public class MemoryProvider : IEmployeeProvider
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{BE75AA22-317F-40BF-BEBB-F1435F844D70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Employee_Memory</RootNamespace>
-    <AssemblyName>EmployeeMemory</AssemblyName>
+    <RootNamespace>EmployeeMemoryProvider</RootNamespace>
+    <AssemblyName>Employee-MemoryProvider</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

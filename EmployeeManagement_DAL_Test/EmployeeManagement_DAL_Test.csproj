@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Employee-InMemory\Employee_Memory.csproj">
+    <ProjectReference Include="..\Employee-InMemory\Employee-MemoryProvider.csproj">
       <Project>{be75aa22-317f-40bf-bebb-f1435f844d70}</Project>
-      <Name>Employee_Memory</Name>
+      <Name>Employee-MemoryProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
       <Project>{B4D9EF12-6CBC-4232-8723-5882D2D12A72}</Project>

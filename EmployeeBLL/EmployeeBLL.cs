@@ -2,7 +2,6 @@
 using EmployeeManagement_Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 
 namespace EmployeeManagement_EmployeeBLL
 {
@@ -12,7 +11,7 @@ namespace EmployeeManagement_EmployeeBLL
 
         public EmployeeBLL(string configString)
         {
-            var providerType = Type.GetType(configString);
+            var providerType = Type.GetType("EmployeeMemoryProvider.MemoryProvider, Employee-MemoryProvider");
             _employeeProvider = (IEmployeeProvider)Activator.CreateInstance(providerType);
         }
 

@@ -16,8 +16,6 @@ D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeManagement_Interfaces
 D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeManagement_Models.pdb
 D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 D:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.csproj.CopyComplete
-D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeMemory.dll
-D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\EmployeeMemory.pdb
 F:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 F:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 F:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -38,3 +36,5 @@ F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBL
 F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.csproj.CopyComplete
 F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.dll
 F:\GitHub\EmployeeManagement\EmployeeBLL\obj\Debug\EmployeeManagement_EmployeeBLL.pdb
+D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Employee-MemoryProvider.dll
+D:\GitHub\EmployeeManagement\EmployeeBLL\bin\Debug\Employee-MemoryProvider.pdb

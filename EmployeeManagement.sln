@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gender-InMemory", "Gender-I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee-SQLServer", "Employee-SQL\Employee-SQLServer.csproj", "{2C587DCF-1EA9-44B7-B408-FFFDE40A86A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee_Memory", "Employee-InMemory\Employee_Memory.csproj", "{BE75AA22-317F-40BF-BEBB-F1435F844D70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee-MemoryProvider", "Employee-InMemory\Employee-MemoryProvider.csproj", "{BE75AA22-317F-40BF-BEBB-F1435F844D70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department-SQLServer", "Department-SQLServer\Department-SQLServer.csproj", "{C8CF3436-8157-4EE3-9BDC-4FF74685F010}"
 EndProject
@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement_Employee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement_DAL_Test", "EmployeeManagement_DAL_Test\EmployeeManagement_DAL_Test.csproj", "{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement-WPF", "EmployeeManagement-WPF\EmployeeManagement-WPF.csproj", "{10EB219E-AA98-4EA4-BB30-33AD537AD471}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement-WPF", "EmployeeManagement-WPF\EmployeeManagement-WPF.csproj", "{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,10 +87,10 @@ Global
 		{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10EB219E-AA98-4EA4-BB30-33AD537AD471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10EB219E-AA98-4EA4-BB30-33AD537AD471}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10EB219E-AA98-4EA4-BB30-33AD537AD471}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10EB219E-AA98-4EA4-BB30-33AD537AD471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,7 +109,7 @@ Global
 		{0BCD2220-12FC-4166-9C91-CCE21044038F} = {0C9F89A4-8469-472F-A32E-B82DD4C0C1CB}
 		{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD} = {5873D7D0-0D94-4AF0-826E-20DEED5B7010}
 		{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80} = {962E47E7-9059-4B73-B937-362EF7E79D42}
-		{10EB219E-AA98-4EA4-BB30-33AD537AD471} = {7F0A8EF2-FBF6-479E-82DA-29594B6DE6F9}
+		{750C19AB-A3AE-4C4D-A001-643F14E5EC7D} = {7F0A8EF2-FBF6-479E-82DA-29594B6DE6F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51F72096-1A97-4B01-8747-F0542394403C}
