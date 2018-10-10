@@ -6,12 +6,12 @@ namespace Gender_InMemory
 {
     public class GenderInMemory : IGenderProvider
     {
-        List<Gender> genders = new List<Gender>();
+        List<GenderCommon> genders = new List<GenderCommon>();
 
-        public List<Gender> GetAllItems()
+        public List<GenderCommon> GetAllItems()
         {
-            genders.Add(new Gender { ID = 1, GenderType = "Male" });
-            genders.Add(new Gender { ID = 1, GenderType = "Female" });
+            genders.Add(new GenderCommon { ID = 1, GenderType = "Male" });
+            genders.Add(new GenderCommon { ID = 1, GenderType = "Female" });
             return genders;
         }
 

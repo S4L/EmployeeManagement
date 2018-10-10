@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Employee-InMemory")]
+[assembly: AssemblyTitle("EmployeeMemoryProvider")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Employee-InMemory")]
+[assembly: AssemblyProduct("EmployeeMemoryProvider")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("be75aa22-317f-40bf-bebb-f1435f844d70")]
+[assembly: Guid("9785f555-6ab9-446c-985a-c33d65526edf")]
 
 // Version information for an assembly consists of the following four values:
 //

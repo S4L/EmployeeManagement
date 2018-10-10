@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeManagement_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="730">
+        Title="Employee Management" Height="450" Width="740"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -34,7 +35,12 @@
         </Grid>
 
         <Border Padding="20" Background="#2E4272"  Grid.Row="1">
-            <ListView>
+            <ListView ItemsSource="{Binding EmployeeList}">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+                </ListView.Resources>
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="First Name" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
@@ -46,6 +52,7 @@
                 </ListView.View>
             </ListView>
         </Border>
-        
+
+
     </Grid>
 </Window>

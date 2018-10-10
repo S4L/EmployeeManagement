@@ -6,6 +6,6 @@ namespace EmployeeManagement_Interfaces
     public interface IDepartmentProvider
     {
         void OpenConnection();
-        List<Department> GetAllItems();
+        List<DepartmentCommon> GetAllDepartments();
     }
 }

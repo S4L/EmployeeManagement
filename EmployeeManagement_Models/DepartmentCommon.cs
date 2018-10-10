@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement_Models
 {
-    public class Gender
+    public class DepartmentCommon
     {
         public int ID { get; set; }
-        public string GenderType { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -16,8 +16,6 @@ D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManag
 D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.csproj.CopyComplete
 D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.dll
 D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.pdb
-D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemory.dll
-D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemory.pdb
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -38,3 +36,5 @@ F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManag
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.csproj.CopyComplete
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.pdb
+D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.dll
+D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.pdb

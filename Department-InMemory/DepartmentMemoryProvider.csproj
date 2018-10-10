@@ -7,8 +7,8 @@
     <ProjectGuid>{0BCD2220-12FC-4166-9C91-CCE21044038F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Department_InMemory</RootNamespace>
-    <AssemblyName>Department-InMemory</AssemblyName>
+    <RootNamespace>DepartmentMemoryProvider</RootNamespace>
+    <AssemblyName>DepartmentMemoryProvider</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

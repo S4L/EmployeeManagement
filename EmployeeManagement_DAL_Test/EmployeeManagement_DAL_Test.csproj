@@ -58,13 +58,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Employee-InMemory\Employee_Memory.csproj">
-      <Project>{be75aa22-317f-40bf-bebb-f1435f844d70}</Project>
-      <Name>Employee_Memory</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
       <Project>{B4D9EF12-6CBC-4232-8723-5882D2D12A72}</Project>
       <Name>EmployeeManagement_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeMemoryProvider\EmployeeMemoryProvider.csproj">
+      <Project>{9785F555-6AB9-446C-985A-C33D65526EDF}</Project>
+      <Name>EmployeeMemoryProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

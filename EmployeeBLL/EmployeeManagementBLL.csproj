@@ -7,8 +7,8 @@
     <ProjectGuid>{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmployeeManagement_EmployeeBLL</RootNamespace>
-    <AssemblyName>EmployeeManagement_EmployeeBLL</AssemblyName>
+    <RootNamespace>EmployeeManagementBLL</RootNamespace>
+    <AssemblyName>EmployeeManagementBLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartmentBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Department-InMemory\DepartmentMemoryProvider.csproj">
+      <Project>{0bcd2220-12fc-4166-9c91-cce21044038f}</Project>
+      <Name>DepartmentMemoryProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EmployeeManagement_DAL_Test\EmployeeManagement_DAL_Test.csproj">
       <Project>{5c856b31-2f71-4f86-adeb-eefbee5fcf80}</Project>
       <Name>EmployeeManagement_DAL_Test</Name>
@@ -57,6 +61,10 @@
     <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
       <Project>{B4D9EF12-6CBC-4232-8723-5882D2D12A72}</Project>
       <Name>EmployeeManagement_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeMemoryProvider\EmployeeMemoryProvider.csproj">
+      <Project>{9785f555-6ab9-446c-985a-c33d65526edf}</Project>
+      <Name>EmployeeMemoryProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
