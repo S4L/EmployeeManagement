@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployeeManagement_WPF.Model
 {
-    public class Employee
+    public class Employee: INotifyPropertyChanged
     {
         private int _id;
         private string _firstname;
@@ -26,7 +28,11 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _id = value;
+                if(value != _id)
+                {
+                    _id = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -39,7 +45,11 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _firstname = value;
+                if (value != _firstname)
+                {
+                    _firstname = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -52,7 +62,11 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _lastname = value;
+                if (value != _lastname)
+                {
+                    _lastname = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -65,7 +79,11 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _email = value;
+                if (value != _email)
+                {
+                    _email = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -78,7 +96,11 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _phone = value;
+                if (value != _phone)
+                {
+                    _phone = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -91,7 +113,11 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _department = value;
+                if (value != _department)
+                {
+                    _department = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -104,7 +130,21 @@ namespace EmployeeManagement_WPF.Model
 
             set
             {
-                _gender = value;
+                if (value != _gender)
+                {
+                    _gender = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if(PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }
