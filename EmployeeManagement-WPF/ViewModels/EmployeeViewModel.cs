@@ -11,7 +11,7 @@ using System.Collections.Specialized;
 
 namespace EmployeeManagement_WPF.ViewModels
 {
-    public class EmployeeViewModel
+    public class EmployeeViewModel: INotifyPropertyChanged
     {
         private ObservableCollection<Employee> _observableEmployees;
         private List<DepartmentCommon> _departments;
@@ -43,11 +43,16 @@ namespace EmployeeManagement_WPF.ViewModels
             _observableEmployees = new ObservableCollection<Employee>(_employeeList);
         }
 
-        public ObservableCollection<Employee> EmployeeList => _observableEmployees;
+        public ObservableCollection<Employee> EmployeeList {
+            get => _observableEmployees;
+        } 
+
         public List<DepartmentCommon> DepartmentList => _departments;
         public List<GenderCommon> GenderList => _genders;
 
         public ICommand OpenNewEmployeeCommand { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void OpenNewEmployeeWindow()
         {
