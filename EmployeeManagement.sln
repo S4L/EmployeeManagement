@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GenderProvider", "GenderPro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gender-SQLServer", "Gender-SQLServer\Gender-SQLServer.csproj", "{BA7229B8-9D48-4C5A-A22F-C5D0B1D097D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gender-InMemory", "Gender-InMemory\Gender-InMemory.csproj", "{6DDBCD87-471C-4ABF-BBAA-082DC67950C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenderMemoryProvider", "Gender-InMemory\GenderMemoryProvider.csproj", "{6DDBCD87-471C-4ABF-BBAA-082DC67950C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee-SQLServer", "Employee-SQL\Employee-SQLServer.csproj", "{2C587DCF-1EA9-44B7-B408-FFFDE40A86A1}"
 EndProject

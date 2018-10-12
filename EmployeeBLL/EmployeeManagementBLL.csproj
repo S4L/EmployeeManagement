@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DepartmentBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
+    <Compile Include="GenderBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\EmployeeMemoryProvider\EmployeeMemoryProvider.csproj">
       <Project>{9785f555-6ab9-446c-985a-c33d65526edf}</Project>
       <Name>EmployeeMemoryProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gender-InMemory\GenderMemoryProvider.csproj">
+      <Project>{6ddbcd87-471c-4abf-bbaa-082dc67950c1}</Project>
+      <Name>GenderMemoryProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

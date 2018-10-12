@@ -21,7 +21,7 @@
 
             <Border Padding="10">
                 <StackPanel Orientation="Horizontal">
-                    <Button Margin="0,0,20,0" Content="Add"/>
+                    <Button Margin="0,0,20,0" Content="Add" Command="{Binding OpenNewEmployeeCommand}"/>
                     <Button Margin="0,0,20,0" Content="Delete"/>
                 </StackPanel>
             </Border>

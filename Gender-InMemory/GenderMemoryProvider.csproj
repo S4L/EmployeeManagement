@@ -7,8 +7,8 @@
     <ProjectGuid>{6DDBCD87-471C-4ABF-BBAA-082DC67950C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gender_InMemory</RootNamespace>
-    <AssemblyName>Gender-InMemory</AssemblyName>
+    <RootNamespace>GenderMemoryProvider</RootNamespace>
+    <AssemblyName>GenderMemoryProvider</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
