@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using EmployeeManagement_Models;
 using EmployeeManagement_WPF.Command;
@@ -64,13 +65,6 @@ namespace EmployeeManagement_WPF.ViewModels
             };
 
             employeeBLL.CreateEmployee(newEmployee);
-
-            var newEmployeeView = new CreateNewEmployee();
-            if (newEmployeeView.IsEnabled)
-            {
-                newEmployeeView.Close();
-            }
-
         }
     }
 }
