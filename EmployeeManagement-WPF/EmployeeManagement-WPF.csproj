@@ -56,7 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command\CreateEmployeeCommand.cs" />
+    <Compile Include="Command\OpenNewEmployeeWindowCommand.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Gender.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Page Include="Views\CreateNewEmployeeWindow.xaml">
       <SubType>Designer</SubType>
@@ -70,6 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\NewEmployeeViewModel.cs" />
     <Compile Include="Views\CreateNewEmployeeWindow.xaml.cs">
       <DependentUpon>CreateNewEmployeeWindow.xaml</DependentUpon>
     </Compile>
@@ -116,5 +120,6 @@
       <Name>EmployeeManagement_Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

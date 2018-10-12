@@ -5,47 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmployeeManagement_WPF.Views"
         mc:Ignorable="d"
-        Title="Create New" Height="450" Width="450">
+        Title="New Employee" Height="370" Width="450"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+         
+        <!--Input Label, TextBlock and TextBox-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
 
-        <Border Padding="20">
-            <StackPanel>
-                <!--First Name-->
-                <StackPanel Margin="0,0,0,30" Orientation="Horizontal">
-                    <TextBlock Margin="0,0,20,0" Text="First Name:" FontSize="15"/>
-                    <TextBox Width="300"/>
+            <Border Padding="20">
+                <StackPanel>
+                    <TextBlock Margin="0,0,0,20" Text="First Name:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Last Name:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Email:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Phone:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Department:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Gender:" FontSize="15"/>
                 </StackPanel>
+            </Border>
 
-                <!--Last Name-->
-                <StackPanel Margin="0,0,0,30" Orientation="Horizontal">
-                    <TextBlock Margin="0,0,20,0" Text="Last Name:" FontSize="15"/>
-                    <TextBox Width="300"/>
+            <Border Padding="20" Grid.Column="1">
+                <StackPanel>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewFirstName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewLastName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmail}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewPhone}"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewDepartment}" ItemsSource="{Binding ObservableDepartmentList}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewGender}" ItemsSource="{Binding ObservableGenderList}" DisplayMemberPath="GenderType"/>
                 </StackPanel>
+            </Border>
+        </Grid>
 
-                <!--Email-->
-                <StackPanel Margin="0,0,0,30" Orientation="Horizontal">
-                    <TextBlock Margin="0,0,20,0" Text="Email:" FontSize="15"/>
-                    <TextBox Width="300"/>
-                </StackPanel>
-
-                <!--Phone-->
-                <StackPanel Margin="0,0,0,30" Orientation="Horizontal">
-                    <TextBlock Margin="0,0,20,0" Text="Phone:" FontSize="15"/>
-                    <TextBox Width="300"/>
-                </StackPanel>
-
-                <!--Department-->
-                <StackPanel Margin="0,0,0,30" Orientation="Horizontal">
-                    <TextBlock Margin="0,0,20,0" Text="Department:" FontSize="15"/>
-                    <ComboBox ItemsSource="{Binding }" Width="200"/>
-                </StackPanel>
-            </StackPanel>
+        <Border Grid.Row="1" Padding="15">
+            <Button Background="BlanchedAlmond" Content="Save" Width="200" Command="{Binding CreateEmployeeCommand}"/>
         </Border>
-        
     </Grid>
 
     
