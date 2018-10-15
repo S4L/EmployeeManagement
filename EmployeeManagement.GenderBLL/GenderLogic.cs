@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EmMana.GenderBLL
 {
-    public class GenderLogic
+    public class GenderLogic: IGenderDataAccess
     {
         private IGenderDataAccess _genderProvider;
 
@@ -23,6 +23,21 @@ namespace EmMana.GenderBLL
         public List<GenderCommon> GetAllGenders()
         {
             return _genderProvider.GetAllGenders();
+        }
+
+        public GenderCommon GetGenderByEmployeeID(int id)
+        {
+            return _genderProvider.GetGenderByEmployeeID(id);
+        }
+
+        public int GetGenderIDByGenderType(string genderType)
+        {
+            return _genderProvider.GetGenderIDByGenderType(genderType);
+        }
+
+        public void OpenConnection()
+        {
+            throw new NotImplementedException();
         }
     }
 }

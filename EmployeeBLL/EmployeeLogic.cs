@@ -18,7 +18,7 @@ namespace EmMana.EmployeeBLL
         }
        
 
-        public List<EmployeeCommon> GetAllEmployess()
+        public List<EmployeeCommon> GetAllEmployees()
         {
            return _employeeProvider.GetAllEmployees();
         }

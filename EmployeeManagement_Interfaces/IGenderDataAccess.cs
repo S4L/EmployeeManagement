@@ -7,5 +7,7 @@ namespace EmMana.DALInterfaces
     {
         void OpenConnection();
         List<GenderCommon> GetAllGenders();
+        GenderCommon GetGenderByEmployeeID(int id);
+        int GetGenderIDByGenderType(string genderType);
     }
 }

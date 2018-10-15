@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EmMana.DepartmentBLL
 {
-    public class DepartmentLogic
+    public class DepartmentLogic: IDepartmentDataAccess
     {
         private IDepartmentDataAccess _departmentProvider;
 
@@ -20,9 +20,29 @@ namespace EmMana.DepartmentBLL
             _departmentProvider = new EmMana.DepartmentMemoryProvider.DepartmentInMemory();
         }
 
+        public void AddDepartment(DepartmentCommon department)
+        {
+            _departmentProvider.AddDepartment(department);
+        }
+
         public List<DepartmentCommon> GetAllDepartments()
         {
             return _departmentProvider.GetAllDepartments();
+        }
+
+        public DepartmentCommon GetDepartmentByDepartmentID(int id)
+        {
+            return _departmentProvider.GetDepartmentByDepartmentID(id);
+        }
+
+        public int GetDepartmentIDByName(string name)
+        {
+            return _departmentProvider.GetDepartmentIDByName(name);
+        }
+
+        public void OpenConnection()
+        {
+            throw new NotImplementedException();
         }
     }
 }

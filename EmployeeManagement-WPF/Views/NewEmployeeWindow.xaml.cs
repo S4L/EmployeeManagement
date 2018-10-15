@@ -18,9 +18,9 @@ namespace EmMana.WPF.Views
     /// <summary>
     /// Interaction logic for CreateNewEmployee.xaml
     /// </summary>
-    public partial class CreateNewEmployee : Window
+    public partial class NewEmployee : Window
     {
-        public CreateNewEmployee()
+        public NewEmployee()
         {
             InitializeComponent();
             DataContext = new NewEmployeeViewModel();

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EmMana.WPF.Model
 {
-    public class Employee: INotifyPropertyChanged
+    public class EmployeeVM: INotifyPropertyChanged
     {
         private int _id;
         private string _firstname;
