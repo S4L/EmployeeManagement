@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using EmployeeManagement_Models;
+using EmMana.Models;
 
-namespace EmployeeManagement_Interfaces
+namespace EmMana.DALInterfaces
 {
-    public interface IGenderProvider
+    public interface IGenderDataAccess
     {
         void OpenConnection();
         List<GenderCommon> GetAllGenders();

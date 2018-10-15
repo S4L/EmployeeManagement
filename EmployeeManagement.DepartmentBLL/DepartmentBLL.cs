@@ -1,12 +1,10 @@
-﻿using EmployeeManagement_Interfaces;
-using EmployeeManagement_Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeManagementBLL
+namespace EmMana.DepartmentBLL
 {
     public class DepartmentBLL
     {
@@ -17,7 +15,7 @@ namespace EmployeeManagementBLL
             //TODO: Figure out how to resole the Type.GetType returns null issue
             //var providerType = Type.GetType(configString);
             //_employeeProvider = (IEmployeeProvider)Activator.CreateInstance(providerType);
-            _departmentProvider = new DepartmentMemoryProvider.DepartmentInMemory();
+            _departmentProvider = new EmMana.DepartmentMemoryProvider.DepartmentInMemory();
         }
 
         public List<DepartmentCommon> GetAllDepartments()

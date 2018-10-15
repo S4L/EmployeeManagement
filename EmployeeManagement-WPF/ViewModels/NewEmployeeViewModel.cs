@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
-using EmployeeManagement_Models;
-using EmployeeManagement_WPF.Command;
-using EmployeeManagement_WPF.Model;
-using EmployeeManagement_WPF.Views;
-using EmployeeManagementBLL;
+using EmMana.Models;
+using EmMana.WPF.Command;
+using EmMana.WPF.Model;
+using EmMana.WPF.Views;
+using EmManaBLL;
 
-namespace EmployeeManagement_WPF.ViewModels
+namespace EmMana.WPF.ViewModels
 {
     public class NewEmployeeViewModel
     {

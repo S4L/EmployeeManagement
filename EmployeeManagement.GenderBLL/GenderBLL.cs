@@ -1,16 +1,15 @@
-﻿using EmployeeManagement_Interfaces;
-using EmployeeManagement_Models;
+﻿using EmMana.DALInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeManagementBLL
+namespace EmMana.GenderBLL
 {
     public class GenderBLL
     {
-        private IGenderProvider _genderProvider;
+        private IGenderDataAccess _genderProvider;
 
         public GenderBLL()
         {

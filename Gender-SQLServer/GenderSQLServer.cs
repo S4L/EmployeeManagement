@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gender_SQLServer
+namespace EmMana.GenderSQLServer
 {
     public class GenderSQLServer
     {

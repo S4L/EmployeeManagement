@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement_WPF.Model
+namespace EmMana.WPF.Model
 {
     public class Employee: INotifyPropertyChanged
     {

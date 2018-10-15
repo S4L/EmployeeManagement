@@ -15,31 +15,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{962E47E7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmployeeProvider", "EmployeeProvider", "{2027E7F2-5234-4CDC-86F8-803562465805}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement_Interfaces", "EmployeeManagement_Interfaces\EmployeeManagement_Interfaces.csproj", "{6FE0E62D-3E1D-4196-B866-3C4B357DF7F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.DALInterfaces", "EmployeeManagement_Interfaces\EmMana.DALInterfaces.csproj", "{6FE0E62D-3E1D-4196-B866-3C4B357DF7F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement_Models", "EmployeeManagement_Models\EmployeeManagement_Models.csproj", "{B4D9EF12-6CBC-4232-8723-5882D2D12A72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.Models", "EmployeeManagement_Models\EmMana.Models.csproj", "{B4D9EF12-6CBC-4232-8723-5882D2D12A72}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DepartmentProvider", "DepartmentProvider", "{0C9F89A4-8469-472F-A32E-B82DD4C0C1CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GenderProvider", "GenderProvider", "{5141CFFC-BB12-485D-A300-A57A8A72C1D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gender-SQLServer", "Gender-SQLServer\Gender-SQLServer.csproj", "{BA7229B8-9D48-4C5A-A22F-C5D0B1D097D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.GenderSQLServer", "Gender-SQLServer\EmMana.GenderSQLServer.csproj", "{BA7229B8-9D48-4C5A-A22F-C5D0B1D097D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenderMemoryProvider", "Gender-InMemory\GenderMemoryProvider.csproj", "{6DDBCD87-471C-4ABF-BBAA-082DC67950C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.GenderMemoryProvider", "Gender-InMemory\EmMana.GenderMemoryProvider.csproj", "{6DDBCD87-471C-4ABF-BBAA-082DC67950C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee-SQLServer", "Employee-SQL\Employee-SQLServer.csproj", "{2C587DCF-1EA9-44B7-B408-FFFDE40A86A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.EmployeeSQLServer", "Employee-SQL\EmMana.EmployeeSQLServer.csproj", "{2C587DCF-1EA9-44B7-B408-FFFDE40A86A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Department-SQLServer", "Department-SQLServer\Department-SQLServer.csproj", "{C8CF3436-8157-4EE3-9BDC-4FF74685F010}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.DepartmentSQLServer", "Department-SQLServer\EmMana.DepartmentSQLServer.csproj", "{C8CF3436-8157-4EE3-9BDC-4FF74685F010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepartmentMemoryProvider", "Department-InMemory\DepartmentMemoryProvider.csproj", "{0BCD2220-12FC-4166-9C91-CCE21044038F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.DepartmentMemoryProvider", "Department-InMemory\EmMana.DepartmentMemoryProvider.csproj", "{0BCD2220-12FC-4166-9C91-CCE21044038F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementBLL", "EmployeeBLL\EmployeeManagementBLL.csproj", "{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.EmployeeBLL", "EmployeeBLL\EmMana.EmployeeBLL.csproj", "{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement_DAL_Test", "EmployeeManagement_DAL_Test\EmployeeManagement_DAL_Test.csproj", "{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.DALTest", "EmployeeManagement_DAL_Test\EmMana.DALTest.csproj", "{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement-WPF", "EmployeeManagement-WPF\EmployeeManagement-WPF.csproj", "{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.WPF", "EmployeeManagement-WPF\EmMana.WPF.csproj", "{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeMemoryProvider", "EmployeeMemoryProvider\EmployeeMemoryProvider.csproj", "{9785F555-6AB9-446C-985A-C33D65526EDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.EmployeeMemoryProvider", "EmployeeMemoryProvider\EmMana.EmployeeMemoryProvider.csproj", "{9785F555-6AB9-446C-985A-C33D65526EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.DepartmentBLL", "EmployeeManagement.DepartmentBLL\EmMana.DepartmentBLL.csproj", "{71B2F94A-4F04-40DB-A117-2EB30F69CE52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmMana.GenderBLL", "EmployeeManagement.GenderBLL\EmMana.GenderBLL.csproj", "{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +95,14 @@ Global
 		{9785F555-6AB9-446C-985A-C33D65526EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9785F555-6AB9-446C-985A-C33D65526EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9785F555-6AB9-446C-985A-C33D65526EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B2F94A-4F04-40DB-A117-2EB30F69CE52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B2F94A-4F04-40DB-A117-2EB30F69CE52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B2F94A-4F04-40DB-A117-2EB30F69CE52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B2F94A-4F04-40DB-A117-2EB30F69CE52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +122,8 @@ Global
 		{5C856B31-2F71-4F86-ADEB-EEFBEE5FCF80} = {962E47E7-9059-4B73-B937-362EF7E79D42}
 		{750C19AB-A3AE-4C4D-A001-643F14E5EC7D} = {7F0A8EF2-FBF6-479E-82DA-29594B6DE6F9}
 		{9785F555-6AB9-446C-985A-C33D65526EDF} = {2027E7F2-5234-4CDC-86F8-803562465805}
+		{71B2F94A-4F04-40DB-A117-2EB30F69CE52} = {5873D7D0-0D94-4AF0-826E-20DEED5B7010}
+		{72F5982E-E90B-4B68-8A4B-15E4DC2D2338} = {5873D7D0-0D94-4AF0-826E-20DEED5B7010}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51F72096-1A97-4B01-8747-F0542394403C}

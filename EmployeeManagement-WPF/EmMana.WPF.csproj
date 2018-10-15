@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{750C19AB-A3AE-4C4D-A001-643F14E5EC7D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EmployeeManagement_WPF</RootNamespace>
-    <AssemblyName>EmployeeManagement-WPF</AssemblyName>
+    <RootNamespace>EmMana.WPF</RootNamespace>
+    <AssemblyName>EmMana.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -111,13 +111,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeBLL\EmployeeManagementBLL.csproj">
+    <ProjectReference Include="..\EmployeeBLL\EmMana.EmployeeBLL.csproj">
       <Project>{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}</Project>
-      <Name>EmployeeManagementBLL</Name>
+      <Name>EmMana.EmployeeBLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
+    <ProjectReference Include="..\EmployeeManagement.GenderBLL\EmMana.GenderBLL.csproj">
+      <Project>{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}</Project>
+      <Name>EmMana.GenderBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeManagement_Models\EmMana.Models.csproj">
       <Project>{b4d9ef12-6cbc-4232-8723-5882d2d12a72}</Project>
-      <Name>EmployeeManagement_Models</Name>
+      <Name>EmMana.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

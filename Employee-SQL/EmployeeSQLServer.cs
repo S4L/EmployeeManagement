@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Employee_SQLServer
+namespace EmMana.EmployeeSQLServer
 {
     public class EmployeeSQLServer
     {

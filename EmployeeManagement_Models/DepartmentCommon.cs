@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement_Models
+namespace EmMana.Models
 {
     public class DepartmentCommon
     {

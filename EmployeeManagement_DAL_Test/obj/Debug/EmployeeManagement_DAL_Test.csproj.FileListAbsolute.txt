@@ -21,14 +21,10 @@ F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.Vis
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeManagement_DAL_Test.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeManagement_DAL_Test.pdb
-F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeManagement_Models.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeManagement_Interfaces.dll
-F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeManagement_Models.pdb
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeManagement_Interfaces.pdb
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.csprojResolveAssemblyReference.cache
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.csproj.CoreCompileInputs.cache
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\obj\Debug\EmployeeManagement_DAL_Test.csproj.CopyComplete
@@ -38,3 +34,7 @@ D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemor
 D:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.pdb
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.dll
 F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmployeeMemoryProvider.pdb
+F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmMana.Models.dll
+F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmMana.DALInterfaces.dll
+F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmMana.Models.pdb
+F:\GitHub\EmployeeManagement\EmployeeManagement_DAL_Test\bin\Debug\EmMana.DALInterfaces.pdb

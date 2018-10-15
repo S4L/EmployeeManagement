@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BCD2220-12FC-4166-9C91-CCE21044038F}</ProjectGuid>
+    <ProjectGuid>{71B2F94A-4F04-40DB-A117-2EB30F69CE52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DepartmentMemoryProvider</RootNamespace>
-    <AssemblyName>DepartmentMemoryProvider</AssemblyName>
+    <RootNamespace>EmployeeManagement.DepartmentBLL</RootNamespace>
+    <AssemblyName>EmployeeManagement.DepartmentBLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,18 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DepartmentInMemory.cs" />
+    <Compile Include="DepartmentBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EmployeeManagement_Interfaces\EmployeeManagement_Interfaces.csproj">
-      <Project>{6fe0e62d-3e1d-4196-b866-3c4b357df7f5}</Project>
-      <Name>EmployeeManagement_Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
-      <Project>{b4d9ef12-6cbc-4232-8723-5882d2d12a72}</Project>
-      <Name>EmployeeManagement_Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

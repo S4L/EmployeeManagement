@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using EmployeeManagement_Interfaces;
-using EmployeeManagement_Models;
+using EmMana.DALInterfaces;
+using EmMana.Models;
 
-namespace DepartmentMemoryProvider
+namespace EmMana.DepartmentMemoryProvider
 {
-    public class DepartmentInMemory : IDepartmentProvider
+    public class DepartmentInMemory : IDepartmentDataAccess
     {
         public List<DepartmentCommon> GetAllDepartments()
         {

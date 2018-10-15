@@ -1,12 +1,8 @@
-﻿using EmployeeManagement_Models;
-using EmployeeManagementBLL;
-using System;
+﻿using EmMana.GenderBLL;
+using EmMana.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EmployeeManagement_WPF.Model
+namespace EmMana.WPF.Model
 {
     public class Gender
     {
