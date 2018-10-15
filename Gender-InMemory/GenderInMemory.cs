@@ -1,10 +1,10 @@
-﻿using EmployeeManagement_Interfaces;
-using EmployeeManagement_Models;
+﻿using EmMana.DALInterfaces;
+using EmMana.Models;
 using System.Collections.Generic;
 
-namespace GenderMemoryProvider
+namespace EmMana.GenderMemoryProvider
 {
-    public class GenderInMemory : IGenderProvider
+    public class GenderInMemory : IGenderDataAccess
     {
         List<GenderCommon> genders = new List<GenderCommon>
         {

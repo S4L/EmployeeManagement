@@ -1,14 +1,14 @@
-﻿using EmployeeManagement_Interfaces;
-using EmployeeManagement_Models;
+﻿using EmMana.DALInterfaces;
+using EmMana.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeMemoryProvider
+namespace EmMana.EmployeeMemoryProvider
 {
-    public class EmployeeInMemory: IEmployeeProvider
+    public class EmployeeInMemory: IEmployeeDataAccess
     {
         private List<EmployeeCommon> employees = new List<EmployeeCommon>
         {

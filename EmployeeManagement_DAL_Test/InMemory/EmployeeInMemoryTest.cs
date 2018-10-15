@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using EmployeeMemoryProvider;
-using EmployeeManagement_Models;
+using EmMana.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EmployeeManagement_DAL_Test.InMemory
+namespace EmMana.DALTest.InMemory
 {
     [TestClass]
     public class EmployeeInMemoryTest

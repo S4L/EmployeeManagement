@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EmployeeManagement_DAL_Test.InMemory
+namespace EmMana.DALTest.InMemory
 {
     [TestClass]
     public class GenderInMemoryTest

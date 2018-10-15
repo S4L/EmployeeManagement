@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}</ProjectGuid>
+    <ProjectGuid>{6DDBCD87-471C-4ABF-BBAA-082DC67950C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmployeeManagementBLL</RootNamespace>
-    <AssemblyName>EmployeeManagementBLL</AssemblyName>
+    <RootNamespace>EmMana.GenderMemoryProvider</RootNamespace>
+    <AssemblyName>EmMana.GenderMemoryProvider</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,35 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DepartmentBLL.cs" />
-    <Compile Include="EmployeeBLL.cs" />
-    <Compile Include="GenderBLL.cs" />
+    <Compile Include="GenderInMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Department-InMemory\DepartmentMemoryProvider.csproj">
-      <Project>{0bcd2220-12fc-4166-9c91-cce21044038f}</Project>
-      <Name>DepartmentMemoryProvider</Name>
+    <ProjectReference Include="..\EmployeeManagement_Interfaces\EmMana.DALInterfaces.csproj">
+      <Project>{6FE0E62D-3E1D-4196-B866-3C4B357DF7F5}</Project>
+      <Name>EmMana.DALInterfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement_DAL_Test\EmployeeManagement_DAL_Test.csproj">
-      <Project>{5c856b31-2f71-4f86-adeb-eefbee5fcf80}</Project>
-      <Name>EmployeeManagement_DAL_Test</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement_Interfaces\EmployeeManagement_Interfaces.csproj">
-      <Project>{6fe0e62d-3e1d-4196-b866-3c4b357df7f5}</Project>
-      <Name>EmployeeManagement_Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement_Models\EmployeeManagement_Models.csproj">
+    <ProjectReference Include="..\EmployeeManagement_Models\EmMana.Models.csproj">
       <Project>{B4D9EF12-6CBC-4232-8723-5882D2D12A72}</Project>
-      <Name>EmployeeManagement_Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeMemoryProvider\EmployeeMemoryProvider.csproj">
-      <Project>{9785f555-6ab9-446c-985a-c33d65526edf}</Project>
-      <Name>EmployeeMemoryProvider</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gender-InMemory\GenderMemoryProvider.csproj">
-      <Project>{6ddbcd87-471c-4abf-bbaa-082dc67950c1}</Project>
-      <Name>GenderMemoryProvider</Name>
+      <Name>EmMana.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿using EmployeeManagement_WPF.ViewModels;
+﻿using EmMana.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace EmployeeManagement_WPF.Command
+namespace EmMana.WPF.Command
 {
     public class OpenNewEmployeeWindowCommand : ICommand
     {

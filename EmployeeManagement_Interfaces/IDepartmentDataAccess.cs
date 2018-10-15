@@ -1,9 +1,9 @@
-﻿using EmployeeManagement_Models;
+﻿using EmMana.Models;
 using System.Collections.Generic;
 
-namespace EmployeeManagement_Interfaces
+namespace EmMana.DALInterfaces
 {
-    public interface IDepartmentProvider
+    public interface IDepartmentDataAccess
     {
         void OpenConnection();
         List<DepartmentCommon> GetAllDepartments();

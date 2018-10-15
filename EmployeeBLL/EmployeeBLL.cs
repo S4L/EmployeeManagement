@@ -1,13 +1,13 @@
-﻿using EmployeeManagement_Interfaces;
-using EmployeeManagement_Models;
+﻿using EmMana.DALInterfaces;
+using EmMana.Models;
 using System;
 using System.Collections.Generic;
 
-namespace EmployeeManagementBLL
+namespace EmMana.EmployeeBLL
 {
     public class EmployeeBLL
     {
-        private IEmployeeProvider _employeeProvider;
+        private IEmployeeDataAccess _employeeProvider;
 
         public EmployeeBLL()
         {

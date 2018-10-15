@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Department_SQLServer
+namespace EmMana.DepartmentSQLServer
 {
     public class DepartmentSQLServer
     {

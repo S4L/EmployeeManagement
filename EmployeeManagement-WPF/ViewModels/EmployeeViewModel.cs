@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using EmployeeManagementBLL;
+using EmMana.EmployeeBLL;
 using System.Collections.ObjectModel;
-using EmployeeManagement_Models;
-using EmployeeManagement_WPF.Model;
-using EmployeeManagement_WPF.Views;
+using EmMana.Models;
+using EmMana.WPF.Model;
+using EmMana.WPF.Views;
 using System.Windows.Input;
-using EmployeeManagement_WPF.Command;
+using EmMana.WPF.Command;
 using System.ComponentModel;
 using System.Collections.Specialized;
 
-namespace EmployeeManagement_WPF.ViewModels
+namespace EmMana.WPF.ViewModels
 {
     public class EmployeeViewModel: INotifyPropertyChanged
     {
