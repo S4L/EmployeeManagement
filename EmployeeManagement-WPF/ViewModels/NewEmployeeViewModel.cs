@@ -1,39 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
+using EmMana.DepartmentBLL;
+using EmMana.EmployeeBLL;
+using EmMana.GenderBLL;
 using EmMana.Models;
 using EmMana.WPF.Command;
 using EmMana.WPF.Model;
-using EmMana.WPF.Views;
-using EmManaBLL;
 
 namespace EmMana.WPF.ViewModels
 {
     public class NewEmployeeViewModel
     {
-        private List<DepartmentCommon> _departments;
-        private List<GenderCommon> _genders;
+        private DepartmentLogic _departmentLogic;
+        private GenderLogic _genderLogic;
+        private EmployeeLogic _employeeLogic;
+        static int totalEmployee = 0;
 
         public NewEmployeeViewModel()
         {
-            _departments = new DepartmentBLL().GetAllDepartments();
-            _genders = new GenderBLL().GetAllGenders();
-            ObservableDepartmentList = new ObservableCollection<DepartmentCommon>(_departments);
-            ObservableGenderList = new ObservableCollection<GenderCommon>(_genders);
+            if(_departmentLogic == null)
+                _departmentLogic = new DepartmentLogic();
+
+            if (_genderLogic == null)
+                _genderLogic = new GenderLogic();
+
+            if (_employeeLogic == null)
+                _employeeLogic = new EmployeeLogic();
+            totalEmployee = _employeeLogic.GetAllEmployees().Count;
+
             CreateEmployeeCommand = new CreateEmployeeCommand(this);
         }
 
         #region Properties
         public ICommand CreateEmployeeCommand { get; }
-        public ObservableCollection<DepartmentCommon> ObservableDepartmentList { get; set; }
-        public ObservableCollection<GenderCommon> ObservableGenderList { get; set; }
+        public ObservableCollection<DepartmentCommon> ObservableDepartmentList => new ObservableCollection<DepartmentCommon>(_departmentLogic.GetAllDepartments());
+        public ObservableCollection<GenderCommon> ObservableGenderList => new ObservableCollection<GenderCommon>(_genderLogic.GetAllGenders());
         public string NewFirstName { get; set; }
         public string NewLastName { get; set; }
         public string NewEmail { get; set; }
@@ -49,22 +52,16 @@ namespace EmMana.WPF.ViewModels
 
         public void SaveChanges()
         {
-            //Debug.Assert(false, "Pressed");
-            var employeeBLL = new EmployeeBLL();
-            var genderObj = new Gender();
-
-            var newEmployee = new EmployeeCommon
+            _employeeLogic.CreateEmployee(new EmployeeCommon
             {
-                Id = employeeBLL.GetAllEmployess().Count,
+                Id = totalEmployee + 1,
                 FirstName = NewFirstName,
                 LastName = NewLastName,
                 Email = NewEmail,
-                Phone = NewPhone,
-                DepartmentId = _departments.Find(department => department.Name == NewDepartment).ID,
-                GenderId = _genders.Find(gender => gender.GenderType == NewGender).ID
-            };
-
-            employeeBLL.CreateEmployee(newEmployee);
+                DepartmentId = _departmentLogic.GetDepartmentIDByName(NewDepartment),
+                GenderId = _genderLogic.GetGenderIDByGenderType(NewGender)
+            }
+            );
         }
     }
 }

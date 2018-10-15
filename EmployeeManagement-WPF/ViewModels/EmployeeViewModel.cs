@@ -8,56 +8,61 @@ using System.Windows.Input;
 using EmMana.WPF.Command;
 using System.ComponentModel;
 using System.Collections.Specialized;
+using EmMana.DepartmentBLL;
+using EmMana.GenderBLL;
+using System;
+using System.Diagnostics;
 
 namespace EmMana.WPF.ViewModels
 {
-    public class EmployeeViewModel: INotifyPropertyChanged
+    public class EmployeeViewModel
     {
-        private ObservableCollection<Employee> _observableEmployees;
-        private List<DepartmentCommon> _departments;
-        private List<GenderCommon> _genders;
+        private EmployeeLogic _employeeLogic;
+        private DepartmentLogic _departmentLogic;
+        private GenderLogic _genderLogic;
 
         public EmployeeViewModel()
         {
             //var configStr = ConfigurationManager.AppSettings["EmployeeMemory"];
-            var _employeeBLL = new EmployeeBLL();
-            var _departmentBLL = new DepartmentBLL();
-            var _genderBLL = new GenderBLL();
-            var employeeCommonList = new List<EmployeeCommon>(_employeeBLL.GetAllEmployess());
-            _departments = new List<DepartmentCommon>(_departmentBLL.GetAllDepartments());
-            _genders = new List<GenderCommon>(_genderBLL.GetAllGenders());
-            var _employeeList = new List<Employee>();
+            if (_employeeLogic == null)
+                _employeeLogic = new EmployeeLogic();
+
+            if (_departmentLogic == null)
+                _departmentLogic = new DepartmentLogic();
+
+            if (_genderLogic == null)
+                _genderLogic = new GenderLogic();
+
             OpenNewEmployeeCommand = new OpenNewEmployeeWindowCommand(this);
-
-            foreach(var employee in employeeCommonList)
-                _employeeList.Add(new Employee
-                {
-                    ID = employee.Id,
-                    FirstName = employee.FirstName,
-                    LastName = employee.LastName,
-                    Email = employee.Email,
-                    Phone = employee.Phone,
-                    Department = _departments.Find(deparment => deparment.ID == employee.DepartmentId).Name
-                });
-
-            _observableEmployees = new ObservableCollection<Employee>(_employeeList);
         }
 
-        public ObservableCollection<Employee> EmployeeList {
-            get => _observableEmployees;
-        } 
-
-        public List<DepartmentCommon> DepartmentList => _departments;
-        public List<GenderCommon> GenderList => _genders;
+        public ObservableCollection<EmployeeVM> EmployeeList => new ObservableCollection<EmployeeVM>(GetEmployees());
+        
 
         public ICommand OpenNewEmployeeCommand { get; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public List<EmployeeVM> GetEmployees()
+        {
+                var employeeCommonList = new List<EmployeeCommon>(_employeeLogic.GetAllEmployees());
+                var employeesVM = new List<EmployeeVM>();
+                foreach (var employee in employeeCommonList)
+                    employeesVM.Add(new EmployeeVM
+                    {
+                        ID = employee.Id,
+                        FirstName = employee.FirstName,
+                        LastName = employee.LastName,
+                        Email = employee.Email,
+                        Phone = employee.Phone,
+                        Department = _departmentLogic.GetDepartmentByDepartmentID(employee.DepartmentId)?.Name?? "No department found"
+                    });
+
+                return employeesVM;
+        }
 
         public void OpenNewEmployeeWindow()
         {
-            var newEmployeeView = new CreateNewEmployee();
-            newEmployeeView.ShowDialog();
+            var newEmployeeView = new NewEmployee();
+            var result = newEmployeeView.ShowDialog();
         }
 
 

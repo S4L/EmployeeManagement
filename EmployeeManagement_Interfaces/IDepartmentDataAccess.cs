@@ -7,5 +7,8 @@ namespace EmMana.DALInterfaces
     {
         void OpenConnection();
         List<DepartmentCommon> GetAllDepartments();
+        DepartmentCommon GetDepartmentByDepartmentID(int id);
+        void AddDepartment(DepartmentCommon department);
+        int GetDepartmentIDByName(string name);
     }
 }

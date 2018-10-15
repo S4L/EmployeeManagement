@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace EmMana_WPF
+namespace EmMana.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
