@@ -8,6 +8,8 @@ using System.Windows.Input;
 using EmMana.WPF.Command;
 using System.ComponentModel;
 using System.Collections.Specialized;
+using EmMana.DepartmentBLL;
+using EmMana.GenderBLL;
 
 namespace EmMana.WPF.ViewModels
 {
@@ -20,9 +22,9 @@ namespace EmMana.WPF.ViewModels
         public EmployeeViewModel()
         {
             //var configStr = ConfigurationManager.AppSettings["EmployeeMemory"];
-            var _employeeBLL = new EmployeeBLL();
-            var _departmentBLL = new DepartmentBLL();
-            var _genderBLL = new GenderBLL();
+            var _employeeBLL = new EmployeeLogic();
+            var _departmentBLL = new DepartmentLogic();
+            var _genderBLL = new GenderLogic();
             var employeeCommonList = new List<EmployeeCommon>(_employeeBLL.GetAllEmployess());
             _departments = new List<DepartmentCommon>(_departmentBLL.GetAllDepartments());
             _genders = new List<GenderCommon>(_genderBLL.GetAllGenders());

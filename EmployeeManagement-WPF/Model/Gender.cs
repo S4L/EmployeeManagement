@@ -10,7 +10,7 @@ namespace EmMana.WPF.Model
 
         public Gender()
         {
-            var genderBLL = new GenderBLL();
+            var genderBLL = new GenderLogic();
             _genderCommonList = new List<GenderCommon>(genderBLL.GetAllGenders());
         }
 

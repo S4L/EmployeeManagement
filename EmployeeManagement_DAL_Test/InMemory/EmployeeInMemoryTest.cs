@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using EmployeeMemoryProvider;
+using EmMana.EmployeeMemoryProvider;
 using EmMana.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

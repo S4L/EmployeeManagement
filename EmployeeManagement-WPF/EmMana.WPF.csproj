@@ -115,6 +115,10 @@
       <Project>{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}</Project>
       <Name>EmMana.EmployeeBLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EmployeeManagement.DepartmentBLL\EmMana.DepartmentBLL.csproj">
+      <Project>{71B2F94A-4F04-40DB-A117-2EB30F69CE52}</Project>
+      <Name>EmMana.DepartmentBLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EmployeeManagement.GenderBLL\EmMana.GenderBLL.csproj">
       <Project>{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}</Project>
       <Name>EmMana.GenderBLL</Name>

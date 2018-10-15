@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace EmMana.EmployeeBLL
 {
-    public class EmployeeBLL
+    public class EmployeeLogic
     {
         private IEmployeeDataAccess _employeeProvider;
 
-        public EmployeeBLL()
+        public EmployeeLogic()
         {
             //TODO: Figure out how to resole the Type.GetType returns null issue
             //var providerType = Type.GetType(configString);

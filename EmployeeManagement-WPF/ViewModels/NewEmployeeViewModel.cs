@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
+using EmMana.DepartmentBLL;
+using EmMana.EmployeeBLL;
+using EmMana.GenderBLL;
 using EmMana.Models;
 using EmMana.WPF.Command;
 using EmMana.WPF.Model;
-using EmMana.WPF.Views;
-using EmManaBLL;
 
 namespace EmMana.WPF.ViewModels
 {
@@ -23,8 +18,8 @@ namespace EmMana.WPF.ViewModels
 
         public NewEmployeeViewModel()
         {
-            _departments = new DepartmentBLL().GetAllDepartments();
-            _genders = new GenderBLL().GetAllGenders();
+            _departments = new DepartmentLogic().GetAllDepartments();
+            _genders = new GenderLogic().GetAllGenders();
             ObservableDepartmentList = new ObservableCollection<DepartmentCommon>(_departments);
             ObservableGenderList = new ObservableCollection<GenderCommon>(_genders);
             CreateEmployeeCommand = new CreateEmployeeCommand(this);
@@ -50,7 +45,7 @@ namespace EmMana.WPF.ViewModels
         public void SaveChanges()
         {
             //Debug.Assert(false, "Pressed");
-            var employeeBLL = new EmployeeBLL();
+            var employeeBLL = new EmployeeLogic();
             var genderObj = new Gender();
 
             var newEmployee = new EmployeeCommon
