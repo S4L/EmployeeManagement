@@ -22,20 +22,14 @@
             <Border Padding="10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                     <Button Margin="0,0,20,0" Content="ADD" Command="{Binding OpenNewEmployeeCommand}" Background="Transparent" Foreground="White" BorderThickness="0"/>
-                    <Button Margin="0,0,20,0" Content="DELETE" Background="Transparent" Foreground="White" BorderThickness="0"/>
+                    <Button Margin="0,0,20,0" Content="DELETE" Command="{Binding DeleteEmployeeCommand}" Background="Transparent" Foreground="White" BorderThickness="0"/>
                 </StackPanel>
             </Border>
 
-            <Border Grid.Column="1" Padding="10">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBox Margin="0,0,10,0" Width="300"></TextBox>
-                    <Button Content="Search"/>
-                </StackPanel>
-            </Border>
         </Grid>
 
         <Border Padding="1" Background="#2E4272"  Grid.Row="1">
-            <ListView ItemsSource="{Binding EmployeeList}" ToolTip="Double click for details">
+            <ListView ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedEmployee}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />

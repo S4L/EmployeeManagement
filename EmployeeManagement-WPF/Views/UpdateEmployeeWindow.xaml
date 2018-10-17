@@ -1,17 +1,17 @@
-﻿<Window x:Class="EmMana.WPF.Views.NewEmployee"
+﻿<Window x:Class="EmMana.WPF.Views.UpdateEmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmMana.WPF.Views"
         mc:Ignorable="d"
-        Title="New Employee" Height="370" Width="450"
-        ResizeMode="NoResize">
+        Title="Update Employee" Height="400" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-         
+
         <!--Input Label, TextBlock and TextBox-->
         <Grid>
             <Grid.ColumnDefinitions>
@@ -33,21 +33,19 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.ID}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Email}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone}"/>
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Department}" ItemsSource="{Binding ObservableDepartmentList}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Gender}" ItemsSource="{Binding ObservableGenderList}" DisplayMemberPath="GenderType"/>
+                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" />
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20"  ItemsSource="{Binding ObservableDepartmentList}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox" Margin="0,0,0,20"  ItemsSource="{Binding ObservableGenderList}" DisplayMemberPath="GenderType"/>
                 </StackPanel>
             </Border>
         </Grid>
 
         <Border Grid.Row="1" Padding="15">
-            <Button Background="BlanchedAlmond" Content="Save" Width="200" Command="{Binding CreateEmployeeCommand}" Click="Save_Click"/>
+            <Button Background="BlanchedAlmond" Content="Update" Width="200" Command="{Binding }"/>
         </Border>
     </Grid>
-
-    
 </Window>

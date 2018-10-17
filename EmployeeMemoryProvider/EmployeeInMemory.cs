@@ -27,7 +27,8 @@ namespace EmMana.EmployeeMemoryProvider
 
         public void DeleteEmployee(int targetID)
         {
-            employees.RemoveAt(targetID);
+            var employee = new EmployeeCommon();
+            employees.Remove(employees.Find(e => e.Id == targetID));
         }
 
         public EmployeeCommon GetEmployeeByID(int targetID)
@@ -62,6 +63,22 @@ namespace EmMana.EmployeeMemoryProvider
             {
                 throw;
             }
+        }
+
+        public EmployeeCommon GetEmployeeByFirstName(string firstname)
+        {
+            return employees.FirstOrDefault(employee => employee.FirstName == firstname);
+        }
+
+        public bool IsEmployeeExisted(int targetID)
+        {
+            var employee = new EmployeeCommon();
+            return employees.Exists(e => e.Id == targetID);
+        }
+
+        public int GetEmployeeCountTotal()
+        {
+            return employees.Count();
         }
     }
 }

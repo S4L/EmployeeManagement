@@ -12,60 +12,96 @@ using EmMana.DepartmentBLL;
 using EmMana.GenderBLL;
 using System;
 using System.Diagnostics;
+using System.Windows;
 
 namespace EmMana.WPF.ViewModels
 {
-    public class EmployeeViewModel
+    public class EmployeeViewModel : BaseViewModel
     {
         private EmployeeLogic _employeeLogic;
         private DepartmentLogic _departmentLogic;
         private GenderLogic _genderLogic;
-
+        private ObservableCollection<Employee> _observableEmployeeList;
         public EmployeeViewModel()
         {
             //var configStr = ConfigurationManager.AppSettings["EmployeeMemory"];
             if (_employeeLogic == null)
-                _employeeLogic = new EmployeeLogic();
+            _employeeLogic = new EmployeeLogic();
 
             if (_departmentLogic == null)
-                _departmentLogic = new DepartmentLogic();
+            _departmentLogic = new DepartmentLogic();
 
             if (_genderLogic == null)
-                _genderLogic = new GenderLogic();
+            _genderLogic = new GenderLogic();
 
+            //Command new instances
             OpenNewEmployeeCommand = new OpenNewEmployeeWindowCommand(this);
+            DeleteEmployeeCommand = new DeleteEmployeeCommand(this);
+
+            EmployeeList = new ObservableCollection<Employee>(GetEmployees());
         }
 
-        public ObservableCollection<EmployeeVM> EmployeeList => new ObservableCollection<EmployeeVM>(GetEmployees());
-        
-
-        public ICommand OpenNewEmployeeCommand { get; }
-
-        public List<EmployeeVM> GetEmployees()
+        public Employee SelectedEmployee { get; set; }
+        public ObservableCollection<Employee> EmployeeList
         {
-                var employeeCommonList = new List<EmployeeCommon>(_employeeLogic.GetAllEmployees());
-                var employeesVM = new List<EmployeeVM>();
-                foreach (var employee in employeeCommonList)
-                    employeesVM.Add(new EmployeeVM
-                    {
-                        ID = employee.Id,
-                        FirstName = employee.FirstName,
-                        LastName = employee.LastName,
-                        Email = employee.Email,
-                        Phone = employee.Phone,
-                        Department = _departmentLogic.GetDepartmentByDepartmentID(employee.DepartmentId)?.Name?? "No department found"
-                    });
+            get => _observableEmployeeList;
+            set
+            {
+                if (_observableEmployeeList != value)
+                {
+                    _observableEmployeeList = value;
+                    NotifyPropertyChanged("EmployeeList");
+                }
+            }
+        }
 
-                return employeesVM;
+        //Button Commands
+        public ICommand OpenNewEmployeeCommand { get; }
+        public ICommand DeleteEmployeeCommand { get; }
+
+        public List<Employee> GetEmployees()
+        {
+            var employeeCommonList = new List<EmployeeCommon>(_employeeLogic.GetAllEmployees());
+            var employeesVM = new List<Employee>();
+            foreach (var employee in employeeCommonList)
+                employeesVM.Add(new Employee
+                {
+                    ID = employee.Id,
+                    FirstName = employee.FirstName,
+                    LastName = employee.LastName,
+                    Email = employee.Email,
+                    Phone = employee.Phone,
+                    Department = _departmentLogic.GetDepartmentByDepartmentID(employee.DepartmentId)?.Name ?? "No department found"
+                });
+
+            return employeesVM;
         }
 
         public void OpenNewEmployeeWindow()
         {
             var newEmployeeView = new NewEmployee();
-            var result = newEmployeeView.ShowDialog();
+            newEmployeeView.ShowDialog();
+
+            var vm = newEmployeeView.DataContext as NewEmployeeViewModel;
+            if(vm != null)
+            {
+                if (vm.IsSaved)
+                {
+                    var model = vm.NewEmployee;
+                    EmployeeList.Add(model);
+                }
+            }
         }
 
+        public void DeleteSelectedEmployee()
+        {
+            _employeeLogic.DeleteEmployee(SelectedEmployee.ID);
 
-
+            if (!_employeeLogic.IsEmployeeExisted(SelectedEmployee.ID))
+            {
+                MessageBox.Show("Delete Successful!");
+                EmployeeList.Remove(SelectedEmployee);
+            }
+        }
     }
 }
