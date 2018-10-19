@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace EmMana.EmployeeBLL
 {
-    public class EmployeeLogic
+    public class EmployeeLogic: IEmployeeDataAccess
     {
         private IEmployeeDataAccess _employeeProvider;
 
@@ -43,7 +43,24 @@ namespace EmMana.EmployeeBLL
             _employeeProvider.DeleteEmployee(targetID);
         }
 
-       
+        public void OpenConnection()
+        {
+            throw new NotImplementedException();
+        }
 
+        public EmployeeCommon GetEmployeeByFirstName(string firstname)
+        {
+            return _employeeProvider.GetEmployeeByFirstName(firstname);
+        }
+
+        public bool IsEmployeeExisted(int targetID)
+        {
+            return _employeeProvider.IsEmployeeExisted(targetID);
+        }
+
+        public int GetEmployeeCountTotal()
+        {
+            return _employeeProvider.GetEmployeeCountTotal();
+        }
     }
 }

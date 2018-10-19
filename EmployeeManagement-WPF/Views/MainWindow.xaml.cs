@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EmMana.WPF.Views;
 
 namespace EmMana.WPF
 {
@@ -25,6 +26,13 @@ namespace EmMana.WPF
         {
             InitializeComponent();
             DataContext = new EmployeeViewModel();
+        }
+
+        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            UpdateEmployeeWindow updateEmployee = new UpdateEmployeeWindow();
+            updateEmployee.FirstNameTBox.Text = EmployeeListView.SelectedItems[0].Tag
+            updateEmployee.ShowDialog();
         }
     }
 }

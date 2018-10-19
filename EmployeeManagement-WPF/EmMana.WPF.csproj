@@ -57,11 +57,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Command\CreateEmployeeCommand.cs" />
+    <Compile Include="Command\DeleteEmployeeCommand.cs" />
     <Compile Include="Command\OpenNewEmployeeWindowCommand.cs" />
-    <Compile Include="Model\EmployeeVM.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="Views\NewEmployeeWindow.xaml.cs">
       <DependentUpon>NewEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateEmployeeWindow.xaml.cs">
+      <DependentUpon>UpdateEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +84,10 @@
     <Page Include="Views\NewEmployeeWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UpdateEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

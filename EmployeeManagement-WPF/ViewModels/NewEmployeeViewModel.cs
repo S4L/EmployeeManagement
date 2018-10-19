@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using EmMana.DepartmentBLL;
 using EmMana.EmployeeBLL;
@@ -16,7 +16,7 @@ namespace EmMana.WPF.ViewModels
         private DepartmentLogic _departmentLogic;
         private GenderLogic _genderLogic;
         private EmployeeLogic _employeeLogic;
-        static int totalEmployee = 0;
+        private int totalEmployee = 0;
 
         public NewEmployeeViewModel()
         {
@@ -28,8 +28,9 @@ namespace EmMana.WPF.ViewModels
 
             if (_employeeLogic == null)
                 _employeeLogic = new EmployeeLogic();
-            totalEmployee = _employeeLogic.GetAllEmployees().Count;
-
+            totalEmployee = _employeeLogic.GetEmployeeCountTotal();
+            NewEmployee = new Employee();
+            NewEmployee.ID = new Random().Next(1, 1000);
             CreateEmployeeCommand = new CreateEmployeeCommand(this);
         }
 
@@ -37,12 +38,8 @@ namespace EmMana.WPF.ViewModels
         public ICommand CreateEmployeeCommand { get; }
         public ObservableCollection<DepartmentCommon> ObservableDepartmentList => new ObservableCollection<DepartmentCommon>(_departmentLogic.GetAllDepartments());
         public ObservableCollection<GenderCommon> ObservableGenderList => new ObservableCollection<GenderCommon>(_genderLogic.GetAllGenders());
-        public string NewFirstName { get; set; }
-        public string NewLastName { get; set; }
-        public string NewEmail { get; set; }
-        public string NewPhone { get; set; }
-        public string NewDepartment { get; set; }
-        public string NewGender { get; set; }
+        public Employee NewEmployee { get; set; }
+        public bool IsSaved { get; set; }
         #endregion
 
         public bool CanCreate()
@@ -52,16 +49,31 @@ namespace EmMana.WPF.ViewModels
 
         public void SaveChanges()
         {
-            _employeeLogic.CreateEmployee(new EmployeeCommon
+            if (!_employeeLogic.IsEmployeeExisted(NewEmployee.ID))
             {
-                Id = totalEmployee + 1,
-                FirstName = NewFirstName,
-                LastName = NewLastName,
-                Email = NewEmail,
-                DepartmentId = _departmentLogic.GetDepartmentIDByName(NewDepartment),
-                GenderId = _genderLogic.GetGenderIDByGenderType(NewGender)
+                var employee = new EmployeeCommon
+                {
+                    Id = NewEmployee.ID,
+                    FirstName = NewEmployee.FirstName,
+                    LastName = NewEmployee.LastName,
+                    Email = NewEmployee.Email,
+                    Phone = NewEmployee.Phone,
+                    DepartmentId = _departmentLogic.GetDepartmentIDByName(NewEmployee.Department),
+                    GenderId = _genderLogic.GetGenderIDByGenderType(NewEmployee.Gender)
+                };
+
+                _employeeLogic.CreateEmployee(employee);
+
+                
+                    IsSaved = true;
+                    MessageBox.Show("New Employee Successfully Added!");
             }
-            );
+            else
+            {
+                MessageBox.Show("Error: Employee Already Exist!");
+            }
+            
+
         }
     }
 }

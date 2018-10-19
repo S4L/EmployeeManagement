@@ -1,5 +1,4 @@
-﻿using EmMana.WPF.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +15,13 @@ using System.Windows.Shapes;
 namespace EmMana.WPF.Views
 {
     /// <summary>
-    /// Interaction logic for CreateNewEmployee.xaml
+    /// Interaction logic for UpdateEmployeeWindow.xaml
     /// </summary>
-    public partial class NewEmployee : Window
+    public partial class UpdateEmployeeWindow : Window
     {
-        public NewEmployee()
+        public UpdateEmployeeWindow()
         {
             InitializeComponent();
-            DataContext = new NewEmployeeViewModel();
-        }
-
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
