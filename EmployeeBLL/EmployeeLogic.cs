@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace EmMana.EmployeeBLL
 {
-    public class EmployeeLogic: IEmployeeDataAccess
+    public class EmployeeLogic: IEmployeeDataAccess //TODO: 
     {
         private IEmployeeDataAccess _employeeProvider;
 
