@@ -10,7 +10,7 @@ namespace EmMana.WPF.Model
 {
     public class Employee: INotifyPropertyChanged
     {
-        private int _id;
+        private Guid _id;
         private string _firstname;
         private string _lastname;
         private string _email;
@@ -19,7 +19,7 @@ namespace EmMana.WPF.Model
         private string _gender;
 
 
-        public int ID
+        public Guid ID
         {
             get
             {
