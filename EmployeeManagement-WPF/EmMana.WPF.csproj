@@ -119,23 +119,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeBLL\EmMana.EmployeeBLL.csproj">
-      <Project>{FEDFE0CC-ED94-42B0-91CE-B212D669EBAD}</Project>
-      <Name>EmMana.EmployeeBLL</Name>
+    <ProjectReference Include="..\EmpManage.BLL\EmpManage.BLL.csproj">
+      <Project>{3C9346C1-1081-4DBC-92EF-543F32D4F4DA}</Project>
+      <Name>EmpManage.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement.DepartmentBLL\EmMana.DepartmentBLL.csproj">
-      <Project>{71B2F94A-4F04-40DB-A117-2EB30F69CE52}</Project>
-      <Name>EmMana.DepartmentBLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement.GenderBLL\EmMana.GenderBLL.csproj">
-      <Project>{72F5982E-E90B-4B68-8A4B-15E4DC2D2338}</Project>
-      <Name>EmMana.GenderBLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmployeeManagement_Models\EmMana.Models.csproj">
-      <Project>{b4d9ef12-6cbc-4232-8723-5882d2d12a72}</Project>
-      <Name>EmMana.Models</Name>
+    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
+      <Project>{97a171d8-ff74-4ccd-aaef-8988b5c4041e}</Project>
+      <Name>EmpManage.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
