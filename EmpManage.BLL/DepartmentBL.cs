@@ -17,19 +17,14 @@ namespace EmpManage.BLL
             _departmentProvider = new EmpManage.InMemoryDAL.DepartmentDA();
         }
 
-        public void AddDepartment(Department department)
-        {
-            _departmentProvider.AddDepartment(department);
-        }
-
         public List<Department> GetAllDepartments()
         {
             return _departmentProvider.GetAllDepartments();
         }
 
-        public Department GetDepartmentByDepartmentID(int id)
+        public string GetDepartmentNameByDepartmentID(int id)
         {
-            return _departmentProvider.GetDepartmentByDepartmentID(id);
+            return _departmentProvider.GetDepartmentNameByDepartmentID(id);
         }
 
         public int GetDepartmentIDByName(string name)

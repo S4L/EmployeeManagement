@@ -8,7 +8,7 @@ namespace EmpManage.Interfaces
     {
         List<Employee> GetAllEmployees();
         Employee GetEmployeeByID(Guid employeeID);
-        List<Employee> GetEmployee(Func<Employee,bool> func); //TODO: passing lambda parameter
+        //List<Employee> GetSpecificEmployees(Func<Employee,bool> func); //TODO: passing lambda parameter
         bool AddEmployee(Employee employee); 
         bool UpdateEmployee(Guid employeeID, Employee employee);
         bool DeleteEmployee(Guid employeeID);

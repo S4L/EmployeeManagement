@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="New Employee" Height="370" Width="450"
+        Title="New Employee" Height="420" Width="450"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
@@ -39,7 +39,10 @@
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Email}"/>
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone}"/>
                     <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Department}" ItemsSource="{Binding ObservableDepartmentList}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Gender}" ItemsSource="{Binding ObservableGenderList}" DisplayMemberPath="GenderType"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Gender}">
+                        <ComboBoxItem Content="Male"/>
+                        <ComboBoxItem Content="Female"/>
+                    </ComboBox>
                 </StackPanel>
             </Border>
         </Grid>

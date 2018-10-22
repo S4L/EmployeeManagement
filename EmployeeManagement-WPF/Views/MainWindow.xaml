@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="Employee Management" Height="450" Width="800"
         ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="TextElement.FontFamily" Value="Helvetica"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="Foreground" Value="#5ACFF8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid Background="#2E4272">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,15 +45,15 @@
 
             <Border Padding="10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                    <Button Margin="0,0,20,0" Content="ADD" Command="{Binding OpenNewEmployeeCommand}" Background="Transparent" Foreground="White" BorderThickness="0"/>
-                    <Button Margin="0,0,20,0" Content="DELETE" Command="{Binding DeleteEmployeeCommand}" Background="Transparent" Foreground="White" BorderThickness="0"/>
+                    <Button Margin="0,0,20,0" Content="ADD" Command="{Binding OpenNewEmployeeCommand}" Style="{StaticResource MenuButtonStyle}"/>
+                    <Button Margin="0,0,20,0" Content="DELETE" Command="{Binding DeleteEmployeeCommand}" Style="{StaticResource MenuButtonStyle}"/>
                 </StackPanel>
             </Border>
 
         </Grid>
 
         <Border Padding="1" Background="#2E4272"  Grid.Row="1">
-            <ListView ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedEmployee}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
+            <ListView ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedEmployee, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -37,9 +61,8 @@
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding ID}"/>
-                        <GridViewColumn Header="First Name" Width="90" DisplayMemberBinding="{Binding FirstName}"/>
-                        <GridViewColumn Header="Last Name" Width="90" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="First Name" Width="110" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Last Name" Width="117" DisplayMemberBinding="{Binding LastName}"/>
                         <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Email}"/>
                         <GridViewColumn Header="Phone" Width="150" DisplayMemberBinding="{Binding Phone}"/>
                         <GridViewColumn Header="Department"  Width="210" DisplayMemberBinding="{Binding Department}"/>

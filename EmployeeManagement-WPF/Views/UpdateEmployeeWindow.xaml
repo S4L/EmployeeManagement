@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmMana.WPF.Views"
         mc:Ignorable="d"
-        Title="Update Employee" Height="400" Width="450">
+        Title="Update Employee" Height="420" Width="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
@@ -33,13 +33,16 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" />
+                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20" />
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" />
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" />
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" />
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" />
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20"  ItemsSource="{Binding ObservableDepartmentList}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox" Margin="0,0,0,20"  ItemsSource="{Binding ObservableGenderList}" DisplayMemberPath="GenderType"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox" Margin="0,0,0,20">
+                        <ComboBoxItem Content="Male"/>
+                        <ComboBoxItem Content="Female"/>
+                    </ComboBox>
                 </StackPanel>
             </Border>
         </Grid>

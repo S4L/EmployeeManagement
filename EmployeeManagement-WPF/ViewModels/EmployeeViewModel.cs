@@ -11,18 +11,17 @@ namespace EmMana.WPF.ViewModels
 {
     public class EmployeeViewModel : BaseViewModel
     {
-        private EmployeeBL _employeeLogic;
-        private DepartmentBL _departmentLogic;
-
+        //private EmployeeBL _employeeTool;
+        //private DepartmentBL _departmentLogic;
         private ObservableCollection<Model.Employee> _observableEmployeeList;
+
         public EmployeeViewModel()
         {
-            //var configStr = ConfigurationManager.AppSettings["EmployeeMemory"];
-            if (_employeeLogic == null)
-            _employeeLogic = new EmployeeBL();
+            if (EmployeeTool == null)
+                EmployeeTool = new EmployeeBL();
 
-            if (_departmentLogic == null)
-            _departmentLogic = new DepartmentBL();
+            if (DepartmentTool == null)
+                DepartmentTool = new DepartmentBL();
 
             //Command new instances
             OpenNewEmployeeCommand = new OpenNewEmployeeWindowCommand(this);
@@ -31,7 +30,10 @@ namespace EmMana.WPF.ViewModels
             EmployeeList = new ObservableCollection<Model.Employee>(GetEmployees());
         }
 
-        public Employee SelectedEmployee { get; set; }
+        #region Properties
+        public static EmployeeBL EmployeeTool { get; set; }
+        public static DepartmentBL DepartmentTool { get; set; }
+        public static Employee SelectedEmployee { get; set; }
         public ObservableCollection<Model.Employee> EmployeeList
         {
             get => _observableEmployeeList;
@@ -44,14 +46,16 @@ namespace EmMana.WPF.ViewModels
                 }
             }
         }
+        #endregion
 
-        //Button Commands
+        #region Button Commands
         public ICommand OpenNewEmployeeCommand { get; }
         public ICommand DeleteEmployeeCommand { get; }
+        #endregion
 
         public List<Model.Employee> GetEmployees()
         {
-            var employees = new List<EmpManage.Models.Employee>(_employeeLogic.GetAllEmployees());
+            var employees = new List<EmpManage.Models.Employee>(EmployeeTool.GetAllEmployees());
             var employeesVM = new List<Model.Employee>();
             foreach (var employee in employees)
                 employeesVM.Add(new Model.Employee
@@ -61,7 +65,7 @@ namespace EmMana.WPF.ViewModels
                     LastName = employee.LastName,
                     Email = employee.Email,
                     Phone = employee.Phone,
-                    Department = _departmentLogic.GetDepartmentByDepartmentID(employee.DepartmentId)?.Name ?? "No department found"
+                    Department = DepartmentTool.GetDepartmentNameByDepartmentID(employee.DepartmentId)
                 });
 
             return employeesVM;
@@ -72,25 +76,24 @@ namespace EmMana.WPF.ViewModels
             var newEmployeeView = new NewEmployee();
             newEmployeeView.ShowDialog();
 
-            var vm = newEmployeeView.DataContext as NewEmployeeViewModel;
-            if(vm != null)
+            var newemployeeVM = newEmployeeView.DataContext as NewEmployeeViewModel;
+            if(newemployeeVM != null)
             {
-                if (vm.IsSaved)
+                if (newemployeeVM.IsSaved)
                 {
-                    var model = vm.NewEmployee;
-                    EmployeeList.Add(model);
+                    var employee = newemployeeVM.NewEmployee;
+                    EmployeeList.Add(employee);
                 }
             }
         }
 
         public void DeleteSelectedEmployee()
         {
-            _employeeLogic.DeleteEmployee(SelectedEmployee.ID);
-
-           
+            if (EmployeeTool.DeleteEmployee(SelectedEmployee.ID))
+            {
                 MessageBox.Show("Delete Successful!");
                 EmployeeList.Remove(SelectedEmployee);
-            
+            }
         }
     }
 }

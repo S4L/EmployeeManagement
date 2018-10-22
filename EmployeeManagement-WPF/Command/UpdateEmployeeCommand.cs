@@ -8,35 +8,28 @@ using System.Windows.Input;
 
 namespace EmMana.WPF.Command
 {
-    public class DeleteEmployeeCommand: ICommand
+    public class UpdateEmployeeCommand : ICommand
     {
-        private EmployeeViewModel _viewmodel;
-
-        public DeleteEmployeeCommand(EmployeeViewModel viewModel)
+        private UpdateEmployeeViewModel _viewModel;
+        public UpdateEmployeeCommand(UpdateEmployeeViewModel viewModel)
         {
-            _viewmodel = viewModel;
+            _viewModel = viewModel;
         }
 
-        public event EventHandler CanExecuteChanged {
+        public event EventHandler CanExecuteChanged
+        {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
 
         public bool CanExecute(object parameter)
         {
-           if(EmployeeViewModel.SelectedEmployee != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            _viewmodel.DeleteSelectedEmployee();
+            _viewModel.UpdateChanges();
         }
     }
 }

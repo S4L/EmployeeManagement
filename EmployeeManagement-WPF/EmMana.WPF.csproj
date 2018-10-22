@@ -59,9 +59,11 @@
     <Compile Include="Command\CreateEmployeeCommand.cs" />
     <Compile Include="Command\DeleteEmployeeCommand.cs" />
     <Compile Include="Command\OpenNewEmployeeWindowCommand.cs" />
+    <Compile Include="Command\UpdateEmployeeCommand.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\UpdateEmployeeViewModel.cs" />
     <Compile Include="Views\NewEmployeeWindow.xaml.cs">
       <DependentUpon>NewEmployeeWindow.xaml</DependentUpon>
     </Compile>

@@ -49,13 +49,14 @@ namespace EmMana.WPF.ViewModels
                 Email = NewEmployee.Email,
                 Phone = NewEmployee.Phone,
                 DepartmentId = _departmentLogic.GetDepartmentIDByName((string)NewEmployee.Department),
-
+                Gender = NewEmployee.Gender
             };
 
-            _employeeLogic.AddEmployee(employee);
-
-            IsSaved = true;
-            MessageBox.Show("New Employee Successfully Added!");
+            if (_employeeLogic.AddEmployee(employee))
+            {
+                IsSaved = true;
+                MessageBox.Show("New Employee Successfully Added!");
+            }
         }
     }
 }

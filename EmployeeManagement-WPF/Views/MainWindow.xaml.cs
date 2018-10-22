@@ -31,7 +31,13 @@ namespace EmMana.WPF
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             UpdateEmployeeWindow updateEmployee = new UpdateEmployeeWindow();
-            //updateEmployee.FirstNameTBox.Text = EmployeeListView.SelectedItems[0].Tag
+            updateEmployee.IdTBlock.Text = EmployeeViewModel.SelectedEmployee.ID.ToString();
+            updateEmployee.FirstNameTBox.Text = EmployeeViewModel.SelectedEmployee.FirstName;
+            updateEmployee.LastNameTBox.Text = EmployeeViewModel.SelectedEmployee.LastName;
+            updateEmployee.EmailTBox.Text = EmployeeViewModel.SelectedEmployee.Email;
+            updateEmployee.PhoneTBox.Text = EmployeeViewModel.SelectedEmployee.Phone;
+            updateEmployee.DepartmentCBox.Text = EmployeeViewModel.SelectedEmployee.Department;
+            updateEmployee.GenderCBox.Text = EmployeeViewModel.SelectedEmployee.Gender;
             updateEmployee.ShowDialog();
         }
     }

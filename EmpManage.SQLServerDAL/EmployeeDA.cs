@@ -117,7 +117,7 @@ namespace EmpManage.SQLServerDAL
             throw new NotImplementedException();
         }
 
-        public List<Employee> GetEmployee(Func<Employee, bool> func)
+        public List<Employee> GetSpecificEmployees(Func<Employee, bool> func)
         {
             throw new NotImplementedException();
         }
