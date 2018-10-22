@@ -33,13 +33,13 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" />
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox" Margin="0,0,0,20">
+                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20" Text="{Binding NewEmployee.ID}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Email}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone}"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Department}" ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Gender}">
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>

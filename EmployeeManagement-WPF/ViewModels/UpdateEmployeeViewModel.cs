@@ -7,14 +7,31 @@ namespace EmMana.WPF.ViewModels
 {
     public class UpdateEmployeeViewModel: BaseViewModel
     {
+        private EmMana.WPF.Model.Employee _newEmployee;
+
         public UpdateEmployeeViewModel()
         {
             UpdateEmployeeCommand = new UpdateEmployeeCommand(this);
+            NewEmployee = EmployeeViewModel.SelectedEmployee;
         }
 
         #region Properties
         public ObservableCollection<Department> ObservableDepartments => new ObservableCollection<Department>(EmployeeViewModel.DepartmentTool.GetAllDepartments());
-        public EmMana.WPF.Model.Employee NewEmployee { get; set; }
+        public EmMana.WPF.Model.Employee NewEmployee
+        {
+            get
+            {
+                return _newEmployee;
+            }
+            set
+            {
+                if(_newEmployee != value)
+                {
+                    _newEmployee = value;
+                    NotifyPropertyChanged("NewEmployee");
+                }
+            }
+        }
         #endregion
 
         #region Command Properties
