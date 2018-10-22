@@ -33,13 +33,13 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20" Text="{Binding NewEmployee.ID}" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Email}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone}"/>
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Department}" ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Gender}">
+                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20"  Text="{Binding NewEmployee.ID, Mode=OneWayToSource}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName, Mode=OneWayToSource}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName, Mode=OneWayToSource}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Email, Mode=OneWayToSource}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone, Mode=OneWayToSource}"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Department, Mode=OneWayToSource}"  ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox"  Margin="0,0,0,20" Text="{Binding NewEmployee.Gender, Mode=OneWayToSource}" >
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>
@@ -48,7 +48,7 @@
         </Grid>
 
         <Border Grid.Row="1" Padding="15">
-            <Button Background="BlanchedAlmond" Content="Update" Width="200" Command="{Binding }"/>
+            <Button Background="BlanchedAlmond" Content="Update" Width="200" Command="{Binding UpdateEmployeeCommand }" Click="UpdateButton_Click"/>
         </Border>
     </Grid>
 </Window>

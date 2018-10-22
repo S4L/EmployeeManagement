@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using EmpManage.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -201,6 +202,7 @@ namespace EmpManage.Test.InMemoryDAL
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 isUpdated = false;
             }
 

@@ -11,10 +11,6 @@ namespace EmMana.WPF.ViewModels
 {
     public class EmployeeViewModel : BaseViewModel
     {
-        //private EmployeeBL _employeeTool;
-        //private DepartmentBL _departmentLogic;
-        private ObservableCollection<Model.Employee> _observableEmployeeList;
-
         public EmployeeViewModel()
         {
             if (EmployeeTool == null)
@@ -34,17 +30,9 @@ namespace EmMana.WPF.ViewModels
         public static EmployeeBL EmployeeTool { get; set; }
         public static DepartmentBL DepartmentTool { get; set; }
         public static Employee SelectedEmployee { get; set; }
-        public ObservableCollection<Model.Employee> EmployeeList
+        public static ObservableCollection<Model.Employee> EmployeeList
         {
-            get => _observableEmployeeList;
-            set
-            {
-                if (_observableEmployeeList != value)
-                {
-                    _observableEmployeeList = value;
-                    NotifyPropertyChanged("EmployeeList");
-                }
-            }
+            get; set;
         }
         #endregion
 

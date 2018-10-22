@@ -53,7 +53,7 @@
         </Grid>
 
         <Border Padding="1" Background="#2E4272"  Grid.Row="1">
-            <ListView ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedEmployee, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
+            <ListView ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedEmployee}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />

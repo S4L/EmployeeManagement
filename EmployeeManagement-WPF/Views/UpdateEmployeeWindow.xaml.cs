@@ -25,5 +25,10 @@ namespace EmMana.WPF.Views
             InitializeComponent();
             DataContext = new UpdateEmployeeViewModel();
         }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
