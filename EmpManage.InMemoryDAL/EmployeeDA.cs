@@ -9,23 +9,15 @@ namespace EmpManage.InMemoryDAL
 {
     public class EmployeeDA : IEmployeeDataAccess
     {
-        private List<Employee> employees = new List<Employee>
-        {
-            new Employee{ID= new Guid("F4B7685B-6BC6-49EA-ADFF-BBE8A32CD133"), FirstName="Jarvis",LastName="Vision",Email="jarvis@gmail.com",Phone="234-432-5645",DepartmentId=2,Gender="Male"},
-            new Employee{ID = new Guid("2461B020-F141-4B3F-8FB2-F480B52D852A"), FirstName="Jean",LastName="Grey",Email="jGrey@yahoo.com",Phone="458-789-2365",DepartmentId=4,Gender="Female"},
-            new Employee{ID = new Guid("EB453F17-7BD6-4B8C-A06D-F2976FBB960C"), FirstName="Jon",LastName="Snow",Email="jonsnow@gmail.com",Phone="365-458-2563",DepartmentId=5,Gender="Male"},
-            new Employee{ID = new Guid("965CD684-8078-44A4-8186-E2E5F4B31A6E"), FirstName="Kha",LastName="Tran",Email="khatran@hotmail.com",Phone="714-285-7695",DepartmentId=1,Gender="Male"},
-            new Employee{ID = new Guid("F50C56E8-0EBC-4103-A9CA-8E9E88C998CB"), FirstName="Tony",LastName="Stark",Email="ironman@gmail.com",Phone="125-745-2365",DepartmentId=3,Gender="Male"},
-            new Employee{ID = new Guid("F71E2833-4531-461C-89D8-9576D2811D72"), FirstName="Christine",LastName="Lopez",Email="christlopez@gmail.com",Phone="452-125-6589",DepartmentId=3,Gender="Female"}
-        };
+        private InMemoryData inMemoryData;
 
         public bool AddEmployee(Employee employee)
         {
             bool isAdded = false;
 
-            if (!employees.Exists(e => e.ID == employee.ID || (e.FirstName == employee.FirstName && e.LastName == employee.LastName) || e.Email == employee.Email || e.Phone == employee.Phone))
+            if (!inMemoryData.employees.Exists(e => e.ID == employee.ID || (e.FirstName == employee.FirstName && e.LastName == employee.LastName) || e.Email == employee.Email || e.Phone == employee.Phone))
             {
-                employees.Add(employee);
+                inMemoryData.employees.Add(employee);
                 isAdded = true;
             }
 
@@ -36,9 +28,9 @@ namespace EmpManage.InMemoryDAL
         {
             bool isDeleted = false;
 
-            if (employees.Exists(e => e.ID == employeeID))
+            if (inMemoryData.employees.Exists(e => e.ID == employeeID))
             {
-                employees.Remove(employees.Find(e => e.ID == employeeID));
+                inMemoryData.employees.Remove(inMemoryData.employees.Find(e => e.ID == employeeID));
                 isDeleted = true;
             }
 
@@ -49,7 +41,7 @@ namespace EmpManage.InMemoryDAL
         {
             try
             {
-                return employees.Find(e => e.ID == employeeID);
+                return inMemoryData.employees.Find(e => e.ID == employeeID);
             }
             catch(Exception ex)
             {
@@ -60,9 +52,9 @@ namespace EmpManage.InMemoryDAL
 
         public List<Employee> GetAllEmployees()
         {
-            if(employees != null)
+            if(inMemoryData.employees != null)
             {
-                return employees;
+                return inMemoryData.employees;
             }
             return null;
         }
@@ -72,16 +64,16 @@ namespace EmpManage.InMemoryDAL
             bool isUpdated = false;
             try
             {
-                employees.Find(e => e.ID == employeeID).FirstName = employee.FirstName;
-                employees.Find(e => e.ID == employeeID).LastName = employee.LastName;
-                employees.Find(e => e.ID == employeeID).Email = employee.Email;
-                employees.Find(e => e.ID == employeeID).Phone = employee.Phone;
-                employees.Find(e => e.ID == employeeID).DepartmentId = employee.DepartmentId;
-                employees.Find(e => e.ID == employeeID).Gender = employee.Gender;
+                inMemoryData.employees.Find(e => e.ID == employeeID).FirstName = employee.FirstName;
+                inMemoryData.employees.Find(e => e.ID == employeeID).LastName = employee.LastName;
+                inMemoryData.employees.Find(e => e.ID == employeeID).Email = employee.Email;
+                inMemoryData.employees.Find(e => e.ID == employeeID).Phone = employee.Phone;
+                inMemoryData.employees.Find(e => e.ID == employeeID).DepartmentId = employee.DepartmentId;
+                inMemoryData.employees.Find(e => e.ID == employeeID).Gender = employee.Gender;
 
-                var resultEmployee = employees.Find(e => e.ID == employeeID);
+                var resultEmployee = inMemoryData.employees.Find(e => e.ID == employeeID);
 
-                if (employees.Exists(e => e.ID == employee.ID && e.FirstName == employee.FirstName && e.LastName == employee.LastName && e.Email == employee.Email && e.Phone == employee.Phone))
+                if (inMemoryData.employees.Exists(e => e.ID == employee.ID && e.FirstName == employee.FirstName && e.LastName == employee.LastName && e.Email == employee.Email && e.Phone == employee.Phone))
                 {
                     isUpdated = true;
                 }

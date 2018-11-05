@@ -85,19 +85,18 @@ namespace EmpManage.SQLServerDAL
                         {
                             employeeCommons.Add(new Employee
                             {
-                                //Id = (int)reader["ID"],
-                                FirstName = reader["Firstname"].ToString(),
+                                ID = new Guid(reader["ID"].ToString()),
+                                FirstName = (string)reader["Firstname"],
                                 LastName = (string)reader["Lastname"],
                                 Email = (string)reader["Email"],
                                 Phone = (string)reader["Phone"],
                                 DepartmentId = (int)reader["DepartmentID"],
-                                //TODO: Add Gender property
+                                Gender = (string)reader["Gender"]
                             });
                         }
 
                         return employeeCommons;
                     }
-                    reader.Close();
                 }
                 catch(Exception ex)
                 {

@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpManage.Models", "EmpMana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpManage.Test.InMemoryDAL", "EmpManage.Test.InMemoryDAL\EmpManage.Test.InMemoryDAL.csproj", "{FF80782A-B7CD-469C-9243-079584F69AD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpManage.Test.ViewModel", "EmpManage.Test.ViewModel\EmpManage.Test.ViewModel.csproj", "{5E25DF1E-8FB4-4451-957E-EBC9529C0905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{FF80782A-B7CD-469C-9243-079584F69AD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF80782A-B7CD-469C-9243-079584F69AD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF80782A-B7CD-469C-9243-079584F69AD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E25DF1E-8FB4-4451-957E-EBC9529C0905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E25DF1E-8FB4-4451-957E-EBC9529C0905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E25DF1E-8FB4-4451-957E-EBC9529C0905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E25DF1E-8FB4-4451-957E-EBC9529C0905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{0ACE1839-C8B6-44AD-95B6-A076D67E7B3A} = {060658FC-8A89-499C-8CDD-D88F3B3C8954}
 		{97A171D8-FF74-4CCD-AAEF-8988B5C4041E} = {3BE4F039-8290-4BF8-963A-20B8D7EF01A3}
 		{FF80782A-B7CD-469C-9243-079584F69AD9} = {962E47E7-9059-4B73-B937-362EF7E79D42}
+		{5E25DF1E-8FB4-4451-957E-EBC9529C0905} = {962E47E7-9059-4B73-B937-362EF7E79D42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51F72096-1A97-4B01-8747-F0542394403C}
