@@ -24,7 +24,7 @@ namespace EmpManage.SQLServerDAL
 
             try
             {
-                connectionString = ConfigurationManager.ConnectionStrings["LaptopDBCS"].ConnectionString;
+                connectionString = ConfigurationManager.ConnectionStrings["EmployeeDB"].ConnectionString;
                 return connectionString;
             }
             catch (ConfigurationErrorsException ex)
@@ -44,7 +44,7 @@ namespace EmpManage.SQLServerDAL
                     SqlCommand command = new SqlCommand("spInsertEmployee", connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    //command.Parameters.Add("@ID", SqlDbType.Int).Value = employee.Id;
+                    command.Parameters.Add("@ID", SqlDbType.Int).Value = employee.ID;
                     command.Parameters.Add("@Firstname", SqlDbType.VarChar).Value = employee.FirstName;
                     command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
                     command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
@@ -69,7 +69,7 @@ namespace EmpManage.SQLServerDAL
 
         public List<Employee> GetAllEmployees()
         {
-            List<Employee> employeeCommons = new List<Employee>();
+            List<Employee> employees = new List<Employee>();
 
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -78,24 +78,26 @@ namespace EmpManage.SQLServerDAL
                     connection.Open();
                     SqlCommand command = new SqlCommand("spGetEmployees", connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            employeeCommons.Add(new Employee
-                            {
-                                ID = new Guid(reader["ID"].ToString()),
-                                FirstName = (string)reader["Firstname"],
-                                LastName = (string)reader["Lastname"],
-                                Email = (string)reader["Email"],
-                                Phone = (string)reader["Phone"],
-                                DepartmentId = (int)reader["DepartmentID"],
-                                Gender = (string)reader["Gender"]
-                            });
-                        }
 
-                        return employeeCommons;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                employees.Add(new Employee
+                                {
+                                    ID = new Guid(reader["ID"].ToString()),
+                                    FirstName = (string)reader["Firstname"],
+                                    LastName = (string)reader["Lastname"],
+                                    Email = (string)reader["Email"],
+                                    Phone = (string)reader["Phone"],
+                                    DepartmentId = (int)reader["DepartmentID"],
+                                    Gender = (string)reader["Gender"]
+                                });
+                            }
+                        }
+                        return employees;
                     }
                 }
                 catch(Exception ex)

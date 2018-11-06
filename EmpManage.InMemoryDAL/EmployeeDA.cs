@@ -9,10 +9,9 @@ namespace EmpManage.InMemoryDAL
 {
     public class EmployeeDA : IEmployeeDataAccess
     {
-        private InMemoryData inMemoryData;
-
         public bool AddEmployee(Employee employee)
         {
+            InMemoryData inMemoryData = new InMemoryData();
             bool isAdded = false;
 
             if (!inMemoryData.employees.Exists(e => e.ID == employee.ID || (e.FirstName == employee.FirstName && e.LastName == employee.LastName) || e.Email == employee.Email || e.Phone == employee.Phone))
@@ -26,6 +25,7 @@ namespace EmpManage.InMemoryDAL
 
         public bool DeleteEmployee(Guid employeeID)
         {
+            InMemoryData inMemoryData = new InMemoryData();
             bool isDeleted = false;
 
             if (inMemoryData.employees.Exists(e => e.ID == employeeID))
@@ -41,6 +41,7 @@ namespace EmpManage.InMemoryDAL
         {
             try
             {
+                InMemoryData inMemoryData = new InMemoryData();
                 return inMemoryData.employees.Find(e => e.ID == employeeID);
             }
             catch(Exception ex)
@@ -52,7 +53,8 @@ namespace EmpManage.InMemoryDAL
 
         public List<Employee> GetAllEmployees()
         {
-            if(inMemoryData.employees != null)
+            InMemoryData inMemoryData = new InMemoryData();
+            if (inMemoryData.employees != null)
             {
                 return inMemoryData.employees;
             }
@@ -61,6 +63,7 @@ namespace EmpManage.InMemoryDAL
 
         public bool UpdateEmployee(Guid employeeID, Employee employee)
         {
+            InMemoryData inMemoryData = new InMemoryData();
             bool isUpdated = false;
             try
             {

@@ -56,10 +56,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmployeeManagement-WPF\EmMana.WPF.csproj">
-      <Project>{750c19ab-a3ae-4c4d-a001-643f14e5ec7d}</Project>
-      <Name>EmMana.WPF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EmpManage.InMemoryDAL\EmpManage.InMemoryDAL.csproj">
       <Project>{000fef70-daaf-4d27-b991-26e1608cc22f}</Project>
       <Name>EmpManage.InMemoryDAL</Name>
