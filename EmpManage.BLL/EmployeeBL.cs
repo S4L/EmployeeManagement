@@ -2,6 +2,7 @@
 using EmpManage.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace EmpManage.BLL
 {
@@ -9,24 +10,35 @@ namespace EmpManage.BLL
     {
         private IEmployeeDataAccess _employeeProvider;
 
-        public EmployeeBL ()
+        public EmployeeBL (string configString)
         {
-            //TODO: Figure out how to resolve the Type.GetType returns null issue
-            //var providerType = Type.GetType(configString);
-            //_employeeProvider = (IEmployeeProvider)Activator.CreateInstance(providerType);
-            _employeeProvider = new EmpManage.InMemoryDAL.EmployeeDA();
+            GetEmployeeDataProvider(configString);
         }
        
+        private void GetEmployeeDataProvider(string configStr)
+        {
+            try
+            {
+                var providerType = Type.GetType(configStr);
+                _employeeProvider = (IEmployeeDataAccess)Activator.CreateInstance(providerType);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                throw;
+            }
+            
+        }
 
         public List<Employee> GetAllEmployees()
         {
            return _employeeProvider.GetAllEmployees();
         }
 
-        public Employee GetEmployeeByID(Guid employeeID)
-        {
-            return _employeeProvider.GetEmployeeByID(employeeID);
-        }
+        //public Employee GetEmployeeByID(Guid employeeID)
+        //{
+        //    return _employeeProvider.GetEmployeeByID(employeeID);
+        //}
 
         public bool AddEmployee(Employee employee)
         {
@@ -43,7 +55,7 @@ namespace EmpManage.BLL
              return _employeeProvider.DeleteEmployee(employeeID);
         }
 
-        public List<Employee> GetEmployee(Func<Employee, bool> func)
+        public List<Employee> GetSpecificEmployees(Func<Employee, bool> func)
         {
             throw new NotImplementedException();
         }

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DepartmentDA.cs" />
     <Compile Include="EmployeeDA.cs" />
+    <Compile Include="InMemoryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

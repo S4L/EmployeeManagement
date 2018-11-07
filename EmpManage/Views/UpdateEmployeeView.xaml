@@ -1,0 +1,54 @@
+﻿<Window x:Class="EmpManage.Views.UpdateEmployeeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmpManage.Views"
+        mc:Ignorable="d"
+        Title="UpdateEmployeeView" Height="420" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Input Label, TextBlock and TextBox-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Padding="20">
+                <StackPanel>
+                    <TextBlock Margin="0,0,0,20" Text="ID:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="First Name:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Last Name:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Email:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Phone:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Department:" FontSize="15"/>
+                    <TextBlock Margin="0,0,0,20" Text="Gender:" FontSize="15"/>
+                </StackPanel>
+            </Border>
+
+            <Border Padding="20" Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20"  Text="{Binding NewEmployee.ID, Mode=OneWayToSource}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName, Mode=OneWayToSource}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName, Mode=OneWayToSource}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Email, Mode=OneWayToSource}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone, Mode=OneWayToSource}"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Department, Mode=OneWayToSource}"  ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox"  Margin="0,0,0,20" Text="{Binding NewEmployee.Gender, Mode=OneWayToSource}" >
+                        <ComboBoxItem Content="Male"/>
+                        <ComboBoxItem Content="Female"/>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" Padding="15">
+            <Button Background="BlanchedAlmond" Content="Update" Width="200" Command="{Binding UpdateEmployeeCommand }" Click="UpdateButton_Click"/>
+        </Border>
+    </Grid>
+</Window>

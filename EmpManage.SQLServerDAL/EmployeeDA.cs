@@ -20,11 +20,11 @@ namespace EmpManage.SQLServerDAL
 
         private string GetConnectionString()
         {
-            string connectionString = null;
+            string connectionString = "";
 
             try
             {
-                connectionString = ConfigurationManager.ConnectionStrings["LaptopDBCS"].ConnectionString;
+                connectionString = ConfigurationManager.ConnectionStrings["EmployeeDB"].ConnectionString;
                 return connectionString;
             }
             catch (ConfigurationErrorsException ex)
@@ -41,10 +41,12 @@ namespace EmpManage.SQLServerDAL
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("spInsertEmployee", connection);
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlCommand command = new SqlCommand("spInsertEmployee", connection)
+                    {
+                        CommandType = System.Data.CommandType.StoredProcedure
+                    };
 
-                    //command.Parameters.Add("@ID", SqlDbType.Int).Value = employee.Id;
+                    command.Parameters.Add("@ID", SqlDbType.UniqueIdentifier).Value = employee.ID;
                     command.Parameters.Add("@Firstname", SqlDbType.VarChar).Value = employee.FirstName;
                     command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
                     command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
@@ -64,12 +66,34 @@ namespace EmpManage.SQLServerDAL
 
         public bool DeleteEmployee(Guid employeeID)
         {
-            throw new NotImplementedException();
+            using(var connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    var command = new SqlCommand("spDeleteEmployee", connection)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    command.Parameters.Add("@ID", SqlDbType.UniqueIdentifier).Value = employeeID;
+
+                    command.ExecuteNonQuery();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    return false;
+                }
+                
+            }
         }
 
         public List<Employee> GetAllEmployees()
         {
-            List<Employee> employeeCommons = new List<Employee>();
+            List<Employee> employees = new List<Employee>();
 
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -78,26 +102,27 @@ namespace EmpManage.SQLServerDAL
                     connection.Open();
                     SqlCommand command = new SqlCommand("spGetEmployees", connection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            employeeCommons.Add(new Employee
-                            {
-                                //Id = (int)reader["ID"],
-                                FirstName = reader["Firstname"].ToString(),
-                                LastName = (string)reader["Lastname"],
-                                Email = (string)reader["Email"],
-                                Phone = (string)reader["Phone"],
-                                DepartmentId = (int)reader["DepartmentID"],
-                                //TODO: Add Gender property
-                            });
-                        }
 
-                        return employeeCommons;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                employees.Add(new Employee
+                                {
+                                    ID = new Guid(reader["ID"].ToString()),
+                                    FirstName = (string)reader["Firstname"],
+                                    LastName = (string)reader["Lastname"],
+                                    Email = (string)reader["Email"],
+                                    Phone = (string)reader["Phone"],
+                                    DepartmentId = (int)reader["DepartmentID"],
+                                    Gender = (string)reader["Gender"]
+                                });
+                            }
+                        }
+                        return employees;
                     }
-                    reader.Close();
                 }
                 catch(Exception ex)
                 {
@@ -107,19 +132,34 @@ namespace EmpManage.SQLServerDAL
             return null;
         }
 
-        public Employee GetEmployeeByID(Guid employeeID)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool UpdateEmployee(Guid employeeID, Employee employee)
         {
-            throw new NotImplementedException();
-        }
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("spUpdateEmployee", connection)
+                    {
+                        CommandType = System.Data.CommandType.StoredProcedure
+                    };
 
-        public List<Employee> GetEmployee(Func<Employee, bool> func)
-        {
-            throw new NotImplementedException();
+                    command.Parameters.Add("@ID", SqlDbType.UniqueIdentifier).Value = employee.ID;
+                    command.Parameters.Add("@Firstname", SqlDbType.VarChar).Value = employee.FirstName;
+                    command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
+                    command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
+                    command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = employee.Phone;
+                    command.Parameters.Add("@DeparmentID", SqlDbType.Int).Value = employee.DepartmentId;
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    return false;
+                }
+            }
         }
     }
 }
