@@ -2,6 +2,7 @@
 using EmpManage.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace EmpManage.BLL
 {
@@ -9,12 +10,24 @@ namespace EmpManage.BLL
     {
         private IDepartmentDataAccess _departmentProvider;
 
-        public DepartmentBL ()
+        public DepartmentBL (string configString)
         {
-            //TODO: Figure out how to resole the Type.GetType returns null issue
-            //var providerType = Type.GetType(configString);
-            //_employeeProvider = (IEmployeeProvider)Activator.CreateInstance(providerType);
-            _departmentProvider = new EmpManage.InMemoryDAL.DepartmentDA();
+            GetDepartmentDataProvider(configString);
+        }
+
+        private void GetDepartmentDataProvider(string configStr)
+        {
+            try
+            {
+                var providerType = Type.GetType(configStr);
+                _departmentProvider = (IDepartmentDataAccess)Activator.CreateInstance(providerType);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                throw;
+            }
+
         }
 
         public List<Department> GetAllDepartments()

@@ -12,19 +12,10 @@ using System.Windows.Input;
 
 namespace EmpManage.ViewModels
 {
-    public class NewEmployeeVM
+    public class NewEmployeeVM: BaseVM
     {
-        private DepartmentBL _departmentLogic;
-        private EmployeeBL _employeeLogic;
-
         public NewEmployeeVM()
         {
-            if (_departmentLogic == null)
-                _departmentLogic = new DepartmentBL();
-
-            if (_employeeLogic == null)
-                _employeeLogic = new EmployeeBL();
-
             NewEmployee = new EmployeeVM();
             NewEmployee.ID = Guid.NewGuid();
             CreateEmployeeCommand = new CreateEmployeeCmd(this);
@@ -32,7 +23,7 @@ namespace EmpManage.ViewModels
 
         #region Properties
         public ICommand CreateEmployeeCommand { get; }
-        public ObservableCollection<Department> ObservableDepartmentList => new ObservableCollection<Department>(_departmentLogic.GetAllDepartments());
+        public ObservableCollection<Department> ObservableDepartmentList => new ObservableCollection<Department>(DepartmentTool.GetAllDepartments());
         public EmployeeVM NewEmployee { get; set; }
         public bool IsSaved { get; set; }
         #endregion
@@ -51,11 +42,11 @@ namespace EmpManage.ViewModels
                 LastName = NewEmployee.LastName,
                 Email = NewEmployee.Email,
                 Phone = NewEmployee.Phone,
-                DepartmentId = _departmentLogic.GetDepartmentIDByName((string)NewEmployee.Department),
+                DepartmentId = DepartmentTool.GetDepartmentIDByName((string)NewEmployee.Department),
                 Gender = NewEmployee.Gender
             };
 
-            if (_employeeLogic.AddEmployee(employee))
+            if (EmployeeTool.AddEmployee(employee))
             {
                 IsSaved = true;
                 MessageBox.Show("New Employee Successfully Added!");

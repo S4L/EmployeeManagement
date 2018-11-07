@@ -25,7 +25,7 @@ namespace EmpManage.ViewModels
 
         #region Properties
         public bool IsUpdate { get; set; }
-        public ObservableCollection<Department> ObservableDepartments => new ObservableCollection<Department>(MainVM.DepartmentTool.GetAllDepartments());
+        public ObservableCollection<Department> ObservableDepartments => new ObservableCollection<Department>(DepartmentTool.GetAllDepartments());
         public EmployeeVM NewEmployee
         {
             get
@@ -58,11 +58,11 @@ namespace EmpManage.ViewModels
                     LastName = NewEmployee.LastName,
                     Email = NewEmployee.Email,
                     Phone = NewEmployee.Phone,
-                    DepartmentId = MainVM.DepartmentTool.GetDepartmentIDByName(NewEmployee.Department),
+                    DepartmentId = DepartmentTool.GetDepartmentIDByName(NewEmployee.Department),
                     Gender = NewEmployee.Gender
                 };
 
-                if (MainVM.EmployeeTool.UpdateEmployee(NewEmployee.ID, employee))
+                if (EmployeeTool.UpdateEmployee(NewEmployee.ID, employee))
                 {
                     IsUpdate = true;
                     MessageBox.Show("Update Completed!");

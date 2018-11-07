@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E25DF1E-8FB4-4451-957E-EBC9529C0905}</ProjectGuid>
+    <ProjectGuid>{04CA553A-1139-4465-AE58-93127A0F89BC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmpManage.Test.ViewModel</RootNamespace>
-    <AssemblyName>EmpManage.Test.ViewModel</AssemblyName>
+    <RootNamespace>EmpManage.Test.BLL</RootNamespace>
+    <AssemblyName>EmpManage.Test.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -46,28 +46,19 @@
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainVMTest.cs" />
+    <Compile Include="EmployeeBLTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.InMemoryDAL\EmpManage.InMemoryDAL.csproj">
-      <Project>{000fef70-daaf-4d27-b991-26e1608cc22f}</Project>
-      <Name>EmpManage.InMemoryDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
-      <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
-      <Name>EmpManage.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmpManage\EmpManage.csproj">
-      <Project>{6a7c9568-5633-4df0-8abc-3d87aba87947}</Project>
-      <Name>EmpManage</Name>
+    <ProjectReference Include="..\EmpManage.SQLServerDAL\EmpManage.SQLServerDAL.csproj">
+      <Project>{0ace1839-c8b6-44ad-95b6-a076d67e7b3a}</Project>
+      <Name>EmpManage.SQLServerDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -37,20 +37,6 @@ namespace EmpManage.InMemoryDAL
             return isDeleted;
         }
 
-        public Employee GetEmployeeByID(Guid employeeID)
-        {
-            try
-            {
-                InMemoryData inMemoryData = new InMemoryData();
-                return inMemoryData.employees.Find(e => e.ID == employeeID);
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                throw new ArgumentNullException();
-            }
-        }
-
         public List<Employee> GetAllEmployees()
         {
             InMemoryData inMemoryData = new InMemoryData();
@@ -89,10 +75,5 @@ namespace EmpManage.InMemoryDAL
 
             return isUpdated;
         }
-
-        //public List<Employee> GetSpecificEmployees(Func<Employee, bool> func)
-        //{
-        //    return null;
-        //}
     }
 }

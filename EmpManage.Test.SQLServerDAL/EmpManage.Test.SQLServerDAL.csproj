@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E25DF1E-8FB4-4451-957E-EBC9529C0905}</ProjectGuid>
+    <ProjectGuid>{4DFAF877-74F4-451D-9DD6-846BDFFD5611}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmpManage.Test.ViewModel</RootNamespace>
-    <AssemblyName>EmpManage.Test.ViewModel</AssemblyName>
+    <RootNamespace>EmpManage.Test.SQLServerDAL</RootNamespace>
+    <AssemblyName>EmpManage.Test.SQLServerDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -48,26 +48,20 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainVMTest.cs" />
+    <Compile Include="EmployeeDATest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.InMemoryDAL\EmpManage.InMemoryDAL.csproj">
-      <Project>{000fef70-daaf-4d27-b991-26e1608cc22f}</Project>
-      <Name>EmpManage.InMemoryDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
-      <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
+      <Project>{97a171d8-ff74-4ccd-aaef-8988b5c4041e}</Project>
       <Name>EmpManage.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmpManage\EmpManage.csproj">
-      <Project>{6a7c9568-5633-4df0-8abc-3d87aba87947}</Project>
-      <Name>EmpManage</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

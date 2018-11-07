@@ -17,12 +17,6 @@ namespace EmpManage.ViewModels
     {
         public MainVM()
         {
-            if (EmployeeTool == null)
-                EmployeeTool = new EmployeeBL();
-
-            if (DepartmentTool == null)
-                DepartmentTool = new DepartmentBL();
-
             //Command new instances
             OpenNewEmployeeCommand = new OpenNewEmployeeViewCmd(this);
             DeleteEmployeeCommand = new DeleteEmployeeCmd(this);
@@ -31,8 +25,6 @@ namespace EmpManage.ViewModels
         }
 
         #region Properties
-        public static EmployeeBL EmployeeTool { get; set; }
-        public static DepartmentBL DepartmentTool { get; set; }
         public static EmployeeVM SelectedEmployee { get; set; }
         public static ObservableCollection<EmployeeVM> EmployeeList
         {

@@ -57,6 +57,10 @@
       <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
       <Name>EmpManage.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EmpManage.SQLServerDAL\EmpManage.SQLServerDAL.csproj">
+      <Project>{0ace1839-c8b6-44ad-95b6-a076d67e7b3a}</Project>
+      <Name>EmpManage.SQLServerDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
