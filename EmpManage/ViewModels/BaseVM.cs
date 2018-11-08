@@ -13,8 +13,8 @@ namespace EmpManage.ViewModels
     {
         public BaseVM()
         {
-            EmployeeDataType = ConfigurationManager.AppSettings["EmployeeInMemory"];
-            DepartmentDataType = ConfigurationManager.AppSettings["DepartmentInMemory"];
+            EmployeeDataType = ConfigurationManager.AppSettings["EmployeeSQLServer"];
+            DepartmentDataType = ConfigurationManager.AppSettings["DepartmentSQLServer"];
         }
 
         //Properties
