@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
+    <ProjectReference Include="..\EmpManage.Models\EMS.Models.csproj">
       <Project>{97a171d8-ff74-4ccd-aaef-8988b5c4041e}</Project>
-      <Name>EmpManage.Models</Name>
+      <Name>EMS.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

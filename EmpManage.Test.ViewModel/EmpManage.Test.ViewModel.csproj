@@ -57,17 +57,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.InMemoryDAL\EmpManage.InMemoryDAL.csproj">
-      <Project>{000fef70-daaf-4d27-b991-26e1608cc22f}</Project>
-      <Name>EmpManage.InMemoryDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
+    <ProjectReference Include="..\EmpManage.Models\EMS.Models.csproj">
       <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
-      <Name>EmpManage.Models</Name>
+      <Name>EMS.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmpManage\EmpManage.csproj">
+    <ProjectReference Include="..\EmpManage\EMS.UI.csproj">
       <Project>{6a7c9568-5633-4df0-8abc-3d87aba87947}</Project>
-      <Name>EmpManage</Name>
+      <Name>EMS.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EMS.InMemoryDAL\EMS.InMemoryDAL.csproj">
+      <Project>{2e362295-3aca-458e-a982-5bc63336691d}</Project>
+      <Name>EMS.InMemoryDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -7,8 +7,8 @@
     <ProjectGuid>{3C9346C1-1081-4DBC-92EF-543F32D4F4DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmpManage.BLL</RootNamespace>
-    <AssemblyName>EmpManage.BLL</AssemblyName>
+    <RootNamespace>EMS.Logics</RootNamespace>
+    <AssemblyName>EMS.Logics</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,26 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DepartmentBL.cs" />
-    <Compile Include="EmployeeBL.cs" />
+    <Compile Include="DepartmentLogic.cs" />
+    <Compile Include="EmployeeLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.InMemoryDAL\EmpManage.InMemoryDAL.csproj">
-      <Project>{000fef70-daaf-4d27-b991-26e1608cc22f}</Project>
-      <Name>EmpManage.InMemoryDAL</Name>
+    <ProjectReference Include="..\EmpManage.Interfaces\EMS.Interfaces.csproj">
+      <Project>{9f5a8bf3-3173-4a14-bdf5-430a7553cbfe}</Project>
+      <Name>EMS.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmpManage.Interfaces\EmpManage.Interfaces.csproj">
-      <Project>{9F5A8BF3-3173-4A14-BDF5-430A7553CBFE}</Project>
-      <Name>EmpManage.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
-      <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
-      <Name>EmpManage.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EmpManage.SQLServerDAL\EmpManage.SQLServerDAL.csproj">
-      <Project>{0ace1839-c8b6-44ad-95b6-a076d67e7b3a}</Project>
-      <Name>EmpManage.SQLServerDAL</Name>
+    <ProjectReference Include="..\EmpManage.Models\EMS.Models.csproj">
+      <Project>{97a171d8-ff74-4ccd-aaef-8988b5c4041e}</Project>
+      <Name>EMS.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

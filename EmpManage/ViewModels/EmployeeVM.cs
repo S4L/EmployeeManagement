@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmpManage.ViewModels
+namespace EMS.UI.ViewModels
 {
     public class EmployeeVM : BaseVM
     {

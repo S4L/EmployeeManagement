@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmpManage.Models
+namespace EMS.Models
 {
     public class Employee
     {

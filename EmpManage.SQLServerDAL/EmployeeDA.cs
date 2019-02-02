@@ -1,42 +1,19 @@
-﻿using EmpManage.Interfaces;
-using EmpManage.Models;
+﻿using EMS.Interfaces;
+using EMS.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace EmpManage.SQLServerDAL
+namespace EMS.SQLServerDAL
 {
-    public class EmployeeDA : IEmployeeDataAccess
+    public class EmployeeDA : BaseDA,IEmployee
     {
-        private string _connectionString;
-
-        public EmployeeDA()
-        {
-            _connectionString = GetConnectionString();
-        }
-
-        private string GetConnectionString()
-        {
-            string connectionString = "";
-
-            try
-            {
-                connectionString = ConfigurationManager.ConnectionStrings["EmployeeDB"].ConnectionString;
-                return connectionString;
-            }
-            catch (ConfigurationErrorsException ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                return connectionString;
-            }
-        }
-
         public bool AddEmployee(Employee employee)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            bool isAdded = false;
+            using (var connection = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -51,10 +28,15 @@ namespace EmpManage.SQLServerDAL
                     command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
                     command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
                     command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = employee.Phone;
-                    command.Parameters.Add("@DeparmentID", SqlDbType.Int).Value = employee.DepartmentId;
+                    command.Parameters.Add("@Gender", SqlDbType.VarChar).Value = employee.Gender;
+                    command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
                     
-                    command.ExecuteNonQuery();
-                    return true;
+                    int rowAffected = command.ExecuteNonQuery();
+
+                    if (rowAffected > 0)
+                        isAdded = true;
+
+                    return isAdded;
                 }
                 catch (Exception ex)
                 {
@@ -66,7 +48,8 @@ namespace EmpManage.SQLServerDAL
 
         public bool DeleteEmployee(Guid employeeID)
         {
-            using(var connection = new SqlConnection(_connectionString))
+            bool isDeleted = false;
+            using(var connection = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -78,14 +61,17 @@ namespace EmpManage.SQLServerDAL
 
                     command.Parameters.Add("@ID", SqlDbType.UniqueIdentifier).Value = employeeID;
 
-                    command.ExecuteNonQuery();
+                    int rowAffected = command.ExecuteNonQuery();
 
-                    return true;
+                    if (rowAffected > 0)
+                        isDeleted = true;
+
+                    return isDeleted;
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.ToString());
-                    return false;
+                    return isDeleted;
                 }
                 
             }
@@ -95,7 +81,7 @@ namespace EmpManage.SQLServerDAL
         {
             List<Employee> employees = new List<Employee>();
 
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -134,7 +120,7 @@ namespace EmpManage.SQLServerDAL
 
         public bool UpdateEmployee(Guid employeeID, Employee employee)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -149,7 +135,7 @@ namespace EmpManage.SQLServerDAL
                     command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
                     command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
                     command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = employee.Phone;
-                    command.Parameters.Add("@DeparmentID", SqlDbType.Int).Value = employee.DepartmentId;
+                    command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
 
                     command.ExecuteNonQuery();
                     return true;

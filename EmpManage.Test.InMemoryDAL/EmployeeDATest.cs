@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using EmpManage.Models;
+using EMS.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EmpManage.Test.InMemoryDAL

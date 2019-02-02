@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Data.SqlClient;
-using EmpManage.Models;
+using EMS.Models;
 using System.Configuration;
 
 namespace EmMana.Test.SQLServerDAL

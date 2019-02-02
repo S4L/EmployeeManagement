@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{000FEF70-DAAF-4D27-B991-26E1608CC22F}</ProjectGuid>
+    <ProjectGuid>{0ACE1839-C8B6-44AD-95B6-A076D67E7B3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmpManage.InMemoryDAL</RootNamespace>
-    <AssemblyName>EmpManage.InMemoryDAL</AssemblyName>
+    <RootNamespace>EMS.SQLServerDAL</RootNamespace>
+    <AssemblyName>EMS.SQLServerDAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,19 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDA.cs" />
     <Compile Include="DepartmentDA.cs" />
     <Compile Include="EmployeeDA.cs" />
-    <Compile Include="InMemoryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.Interfaces\EmpManage.Interfaces.csproj">
-      <Project>{9f5a8bf3-3173-4a14-bdf5-430a7553cbfe}</Project>
-      <Name>EmpManage.Interfaces</Name>
+    <ProjectReference Include="..\EmpManage.Interfaces\EMS.Interfaces.csproj">
+      <Project>{9F5A8BF3-3173-4A14-BDF5-430A7553CBFE}</Project>
+      <Name>EMS.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
+    <ProjectReference Include="..\EmpManage.Models\EMS.Models.csproj">
       <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
-      <Name>EmpManage.Models</Name>
+      <Name>EMS.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

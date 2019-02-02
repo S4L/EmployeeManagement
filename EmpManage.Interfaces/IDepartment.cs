@@ -1,12 +1,12 @@
-﻿using EmpManage.Models;
+﻿using EMS.Models;
 using System.Collections.Generic;
 
-namespace EmpManage.Interfaces
+namespace EMS.Interfaces
 {
-    public interface IDepartmentDataAccess
+    public interface IDepartment
     {
         List<Department> GetAllDepartments();
-        string GetDepartmentNameByDepartmentID(int id);
+        string GetDepartmentNameByID(int id);
         //void AddDepartment(Department department);
         int GetDepartmentIDByName(string name);
     }

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EmpManage.InMemoryDAL;
-using EmpManage.ViewModels;
+using EMS.InMemoryDAL;
+using EMS.UI.ViewModels;
 using System.Configuration;
 
 namespace EmpManage.Test.ViewModel
@@ -36,7 +36,7 @@ namespace EmpManage.Test.ViewModel
         public void GetEmployeesForEach()
         {
             var employeesVM = new List<EmployeeVM>();
-            foreach (var employee in inMemoryData.employees)
+            foreach (var employee in inMemoryData.Employees)
                 employeesVM.Add(new EmployeeVM
                 {
                     ID = employee.ID,
@@ -44,7 +44,7 @@ namespace EmpManage.Test.ViewModel
                     LastName = employee.LastName,
                     Email = employee.Email,
                     Phone = employee.Phone,
-                    Department = inMemoryData.departments.FirstOrDefault(department => department.ID == employee.DepartmentId).Name
+                    Department = inMemoryData.Departments.FirstOrDefault(department => department.ID == employee.DepartmentId).Name
                 });
 
             Assert.IsTrue(employeesVM.Count > 0);
@@ -54,8 +54,8 @@ namespace EmpManage.Test.ViewModel
         public void GetEmployeesLinq()
         {
             var employeesVM = new List<EmployeeVM>();
-            var employeeList = from employee in inMemoryData.employees
-                               join department in inMemoryData.departments
+            var employeeList = from employee in inMemoryData.Employees
+                               join department in inMemoryData.Departments
                                on employee.DepartmentId equals department.ID
                                select new EmployeeVM
                                {

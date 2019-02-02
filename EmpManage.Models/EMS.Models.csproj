@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F5A8BF3-3173-4A14-BDF5-430A7553CBFE}</ProjectGuid>
+    <ProjectGuid>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmpManage.Interfaces</RootNamespace>
-    <AssemblyName>EmpManage.Interfaces</AssemblyName>
+    <RootNamespace>EMS.Models</RootNamespace>
+    <AssemblyName>EMS.Models</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,15 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\IDepartmentDataAccess.cs" />
-    <Compile Include="DAL\IEmployeeDataAccess.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
-      <Project>{97a171d8-ff74-4ccd-aaef-8988b5c4041e}</Project>
-      <Name>EmpManage.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using EmpManage.Models;
+using EMS.Models;
 
-namespace EmpManage.Interfaces
+namespace EMS.Interfaces
 {
-    public interface IEmployeeDataAccess
+    public interface IEmployee
     {
         List<Employee> GetAllEmployees();
         //List<Employee> GetSpecificEmployees(Func<Employee,bool> func); //TODO: passing lambda parameter

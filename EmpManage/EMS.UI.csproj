@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6A7C9568-5633-4DF0-8ABC-3D87ABA87947}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EmpManage</RootNamespace>
-    <AssemblyName>EmpManage</AssemblyName>
+    <RootNamespace>EMS.UI</RootNamespace>
+    <AssemblyName>EMS.UI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -119,13 +119,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmpManage.BLL\EmpManage.BLL.csproj">
+    <ProjectReference Include="..\EmpManage.BLL\EMS.Logics.csproj">
       <Project>{3c9346c1-1081-4dbc-92ef-543f32d4f4da}</Project>
-      <Name>EmpManage.BLL</Name>
+      <Name>EMS.Logics</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmpManage.Models\EmpManage.Models.csproj">
+    <ProjectReference Include="..\EmpManage.Models\EMS.Models.csproj">
       <Project>{97A171D8-FF74-4CCD-AAEF-8988B5C4041E}</Project>
-      <Name>EmpManage.Models</Name>
+      <Name>EMS.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

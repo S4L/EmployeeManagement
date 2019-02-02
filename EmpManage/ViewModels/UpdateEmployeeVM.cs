@@ -1,5 +1,5 @@
-﻿using EmpManage.Command;
-using EmpManage.Models;
+﻿using EMS.UI.Command;
+using EMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace EmpManage.ViewModels
+namespace EMS.UI.ViewModels
 {
     public class UpdateEmployeeVM:BaseVM
     {

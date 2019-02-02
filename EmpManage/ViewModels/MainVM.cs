@@ -1,7 +1,7 @@
-﻿using EmpManage.BLL;
-using EmpManage.Command;
-using EmpManage.Models;
-using EmpManage.Views;
+﻿using EMS.Logics;
+using EMS.UI.Command;
+using EMS.Models;
+using EMS.UI.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace EmpManage.ViewModels
+namespace EMS.UI.ViewModels
 {
     public class MainVM : BaseVM
     {
@@ -50,7 +50,7 @@ namespace EmpManage.ViewModels
                     LastName = employee.LastName,
                     Email = employee.Email,
                     Phone = employee.Phone,
-                    Department = DepartmentTool.GetDepartmentNameByDepartmentID(employee.DepartmentId)
+                    Department = DepartmentTool.GetDepartmentNameByID(employee.DepartmentId)
                 });
 
             return employeesVM;

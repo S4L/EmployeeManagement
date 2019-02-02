@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EmpManage.Models;
+using EMS.Models;
 using System.Linq;
 
 namespace EmpManage.Test.InMemoryDAL

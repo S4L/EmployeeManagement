@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Department-InMemory",
-    "\\Employee-InMemory",
-    "\\Employee-SQL",
-    "\\EmployeeBLL",
-    "\\EmployeeManagement-ConsoleApp",
-    "\\EmployeeManagement_DAL_Test",
-    "\\EmployeeManagement_DAL_Test\\InMemory",
-    "\\EmployeeManagement_Interfaces",
-    "\\EmployeeManager-WPF"
+    "\\EmpManage.BLL",
+    "\\EmpManage.InMemoryDAL",
+    "\\EmpManage.Interfaces",
+    "\\EmpManage.Models",
+    "\\EmpManage.Test.BLL",
+    "\\EmpManage.Test.InMemoryDAL",
+    "\\EmpManage.Test.SQLServerDAL",
+    "\\EmpManage.Test.ViewModel",
+    "\\EMS.Provider"
   ],
-  "SelectedNode": "\\EmployeeManager-WPF\\ViewModels\\EmployeeViewModel.cs",
+  "SelectedNode": "\\EmpManage.Interfaces\\TypeProvider.cs",
   "PreviewInSolutionExplorer": false
 }

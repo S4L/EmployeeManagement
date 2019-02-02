@@ -1,15 +1,15 @@
-﻿using EmpManage.Models;
+﻿using EMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmpManage.InMemoryDAL
+namespace EMS.InMemoryDAL
 {
     public class InMemoryData
     {
-        public List<Employee> employees = new List<Employee>
+        public List<Employee> Employees => new List<Employee>()
         {
             new Employee{ID= new Guid("F4B7685B-6BC6-49EA-ADFF-BBE8A32CD133"), FirstName="Jarvis",LastName="Vision",Email="jarvis@gmail.com",Phone="234-432-5645",DepartmentId=2,Gender="Male"},
             new Employee{ID = new Guid("2461B020-F141-4B3F-8FB2-F480B52D852A"), FirstName="Jean",LastName="Grey",Email="jGrey@yahoo.com",Phone="458-789-2365",DepartmentId=4,Gender="Female"},
@@ -19,13 +19,12 @@ namespace EmpManage.InMemoryDAL
             new Employee{ID = new Guid("F71E2833-4531-461C-89D8-9576D2811D72"), FirstName="Christine",LastName="Lopez",Email="christlopez@gmail.com",Phone="452-125-6589",DepartmentId=3,Gender="Female"}
         };
 
-        public List<Department> departments = new List<Department>
-        {
-            new Department{ID = 1, Name ="Sales"},
-            new Department{ID = 2, Name ="Customer Support"},
-            new Department{ID = 3, Name ="IT"},
-            new Department{ID = 4, Name ="Production & Quality Assurance"},
-            new Department{ID = 5, Name ="Finance"}
+        public List<Department> Departments => new List<Department>() {
+             new Department{ID = 1, Name ="Sales"},
+             new Department{ID = 2, Name ="Customer Support"},
+             new Department{ID = 3, Name ="IT"},
+             new Department{ID = 4, Name ="Production & Quality Assurance"},
+             new Department{ID = 5, Name ="Finance"}
         };
     }
 }
