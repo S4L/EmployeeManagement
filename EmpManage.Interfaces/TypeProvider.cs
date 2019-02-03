@@ -17,7 +17,14 @@ namespace EMS.Interfaces
         private static Type _departmentDataProvider = Type.GetType(DepartmentDataType);
         #endregion
 
-        public static IEmployee EmployeeDataProvider => Activator.CreateInstance(_employeeDataProvider) as IEmployee;
+        //public static IEmployee EmployeeDataProvider => Activator.CreateInstance(_employeeDataProvider) as IEmployee;
+        public static IEmployee GetEmployeeDataProvider()
+        {
+            return Activator.CreateInstance(_employeeDataProvider) as IEmployee;
+        }
+
         public static IDepartment DepartmentDataProvider => Activator.CreateInstance(_departmentDataProvider) as IDepartment;
+
+
     }
 }
