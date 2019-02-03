@@ -2,7 +2,6 @@
   "ExpandedNodes": [
     "",
     "\\EmpManage.BLL",
-    "\\EmpManage.InMemoryDAL",
     "\\EmpManage.Interfaces",
     "\\EmpManage.Models",
     "\\EmpManage.Test.BLL",

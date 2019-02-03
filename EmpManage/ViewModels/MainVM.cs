@@ -38,7 +38,7 @@ namespace EMS.UI.ViewModels
         public ICommand DeleteEmployeeCommand { get; }
         #endregion
 
-        public List<EmployeeVM> GetEmployees()
+        private List<EmployeeVM> GetEmployees()
         {
             var employees = new List<Employee>(EmployeeTool.GetAllEmployees());
             var employeesVM = new List<EmployeeVM>();

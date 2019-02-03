@@ -26,7 +26,13 @@ namespace EMS.SQLServerDAL
                     command.Parameters.Add("@ID", SqlDbType.UniqueIdentifier).Value = employee.ID;
                     command.Parameters.Add("@Firstname", SqlDbType.VarChar).Value = employee.FirstName;
                     command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
-                    command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
+
+                    //command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
+                    if (employee.Email == null)
+                        command.Parameters.Add("@Email", SqlDbType.VarChar).Value = DBNull.Value;
+                    else
+                        command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
+
                     command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = employee.Phone;
                     command.Parameters.Add("@Gender", SqlDbType.VarChar).Value = employee.Gender;
                     command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
@@ -77,6 +83,13 @@ namespace EMS.SQLServerDAL
             }
         }
 
+        /// <summary>
+        /// Gets all employees.
+        /// </summary>
+        /// <returns>
+        ///   1. List of employee, may be empty.
+        ///   2. null - DB error (DB inaccessible, etc.)
+        /// </returns>
         public List<Employee> GetAllEmployees()
         {
             List<Employee> employees = new List<Employee>();
@@ -100,7 +113,7 @@ namespace EMS.SQLServerDAL
                                     ID = new Guid(reader["ID"].ToString()),
                                     FirstName = (string)reader["Firstname"],
                                     LastName = (string)reader["Lastname"],
-                                    Email = (string)reader["Email"],
+                                    Email = (string)reader["Email"], // DBNull.Value
                                     Phone = (string)reader["Phone"],
                                     DepartmentId = (int)reader["DepartmentID"],
                                     Gender = (string)reader["Gender"]

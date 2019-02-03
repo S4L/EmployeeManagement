@@ -8,16 +8,42 @@ namespace EMS.Logics
 {
     public class EmployeeLogic
     {
-        private IEmployee _employeeData;
 
         public EmployeeLogic ()
         {
-            _employeeData = TypeProvider.EmployeeDataProvider;
+            //_employeeData = TypeProvider.GetEmployeeDataProvider();
+        }
+
+        static object _lock = new object();
+
+        private IEmployee _employeeData;
+        private IEmployee EmployeeData
+        {
+            get
+            {
+                if (_employeeData == null)
+                {
+                    lock (_lock)
+                    {
+                        if (_employeeData == null)
+                        {
+                            _employeeData = TypeProvider.GetEmployeeDataProvider();
+                            if (_employeeData == null)
+                            {
+                                // log error...
+
+                                throw new NullReferenceException("Failed to instantiate ...");
+                            }
+                        }
+                    }
+                }
+                return _employeeData;
+            }
         }
 
         public List<Employee> GetAllEmployees()
         {
-            return _employeeData.GetAllEmployees();
+            return EmployeeData.GetAllEmployees();
         }
 
         //public Employee GetEmployeeByID(Guid employeeID)
@@ -27,17 +53,17 @@ namespace EMS.Logics
 
         public bool AddEmployee(Employee employee)
         {
-            return _employeeData.AddEmployee(employee);
+            return EmployeeData.AddEmployee(employee);
         }
 
         public bool UpdateEmployee(Guid employeeID, Employee employee)
         {
-            return _employeeData.UpdateEmployee(employeeID, employee);
+            return EmployeeData.UpdateEmployee(employeeID, employee);
         }
 
         public bool DeleteEmployee(Guid employeeID)
         {
-            return _employeeData.DeleteEmployee(employeeID);
+            return EmployeeData.DeleteEmployee(employeeID);
         }
 
         public List<Employee> GetSpecificEmployees(Func<Employee, bool> func)
