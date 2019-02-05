@@ -8,25 +8,25 @@ using System.Windows.Input;
 
 namespace EMS.UI.Command
 {
-    public class CreateEmployeeCmd : ICommand
+    public class AddEmployee : ICommand
     {
-        private NewEmployeeVM _newEmployeeViewModel;
+        private UIService _uiService;
 
-        public CreateEmployeeCmd(NewEmployeeVM viewModel)
+        public AddEmployee(UIService service)
         {
-            _newEmployeeViewModel = viewModel;
+            _uiService = service;
         }
 
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            return _newEmployeeViewModel.CanCreate();
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            _newEmployeeViewModel.SaveChanges();
+            _uiService.AddEmployee();
         }
     }
 }

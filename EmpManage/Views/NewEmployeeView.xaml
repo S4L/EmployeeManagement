@@ -8,7 +8,7 @@
         Title="New Employee" Height="420" Width="450"  ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -21,7 +21,6 @@
 
             <Border Padding="20">
                 <StackPanel>
-                    <TextBlock Margin="0,0,0,20" Text="ID:" FontSize="15"/>
                     <TextBlock Margin="0,0,0,20" Text="First Name:" FontSize="15"/>
                     <TextBlock Margin="0,0,0,20" Text="Last Name:" FontSize="15"/>
                     <TextBlock Margin="0,0,0,20" Text="Email:" FontSize="15"/>
@@ -33,13 +32,12 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.ID}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Email}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone}"/>
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Department}" ItemsSource="{Binding ObservableDepartmentList}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding NewEmployee.Gender}">
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding EmployeeVM.FirstName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding EmployeeVM.LastName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding EmployeeVM.Email}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding EmployeeVM.Phone}"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding EmployeeVM.Department}" ItemsSource="{Binding EmployeeVM.Departments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Margin="0,0,0,20" Text="{Binding EmployeeVM.Gender}">
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>
@@ -47,8 +45,8 @@
             </Border>
         </Grid>
 
-        <Border Grid.Row="1" Padding="15">
-            <Button Background="BlanchedAlmond" Content="Save" Width="200" Command="{Binding CreateEmployeeCommand}" Click="Save_Click"/>
+        <Border Grid.Row="1" Padding="30">
+            <Button Background="BlanchedAlmond" Content="Save" Width="200" Command="{Binding AddEmployeeCmd}" Click="Save_Click"/>
         </Border>
     </Grid>
 </Window>

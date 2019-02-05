@@ -45,15 +45,15 @@
 
             <Border Padding="10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                    <Button Margin="0,0,20,0" Content="ADD" Command="{Binding OpenNewEmployeeCommand}" Style="{StaticResource MenuButtonStyle}"/>
-                    <Button Margin="0,0,20,0" Content="DELETE" Command="{Binding DeleteEmployeeCommand}" Style="{StaticResource MenuButtonStyle}"/>
+                    <Button Margin="0,0,20,0" Content="ADD" Command="{Binding OpenAddWindowCmd}" Style="{StaticResource MenuButtonStyle}"/>
+                    <Button Margin="0,0,20,0" Content="DELETE" Command="{Binding DeleteEmployeeCmd}" Style="{StaticResource MenuButtonStyle}"/>
                 </StackPanel>
             </Border>
 
         </Grid>
 
         <Border Padding="1" Background="#2E4272"  Grid.Row="1">
-            <ListView ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedEmployee}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
+            <ListView ItemsSource="{Binding EmployeeVM.Employees}" SelectedItem="{Binding EmployeeVM.SelectedEmployee}" MouseDoubleClick="ListView_MouseDoubleClick" Name="EmployeeListView">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                         <Setter Property="HorizontalContentAlignment" Value="Center" />

@@ -23,7 +23,8 @@ namespace EMS.UI.Views
         public UpdateEmployeeView()
         {
             InitializeComponent();
-            DataContext = new UpdateEmployeeVM();
+            //DataContext = new UpdateEmployeeVM();
+            DataContext = new UIService();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)

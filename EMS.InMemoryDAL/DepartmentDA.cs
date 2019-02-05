@@ -23,11 +23,11 @@ namespace EMS.InMemoryDAL
             return _departments.Departments;
         }
 
-        public string GetDepartmentNameByID(int id)
+        public string GetDepartmentNameByID(Guid departmentID)
         {
             try
             {
-                return _departments.Departments.FirstOrDefault(department => department.ID == id).Name;
+                return _departments.Departments.FirstOrDefault(department => department.ID == departmentID).Name;
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace EMS.InMemoryDAL
 
         }
 
-        public int GetDepartmentIDByName(string name)
+        public Guid GetDepartmentIDByName(string name)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace EMS.InMemoryDAL
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-                return 0;
+                return Guid.Empty;
             }
         }
     }

@@ -8,13 +8,20 @@ using System.Windows.Input;
 
 namespace EMS.UI.Command
 {
-    public class OpenNewEmployeeViewCmd: ICommand
+    public class OpenAddWindow: ICommand
     {
-        private MainVM _employeeViewModel;
+        //private MainVM _employeeViewModel;
 
-        public OpenNewEmployeeViewCmd(MainVM viewModel)
+        //public AddCommand(MainVM viewModel)
+        //{
+        //    _employeeViewModel = viewModel;
+        //}
+
+        private UIService _uiService;
+
+        public OpenAddWindow(UIService service)
         {
-            _employeeViewModel = viewModel;
+            _uiService = service;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -26,7 +33,7 @@ namespace EMS.UI.Command
 
         public void Execute(object parameter)
         {
-            _employeeViewModel.OpenNewEmployeeWindow();
+            _uiService.OpenNewEmployeeWindow();
         }
     }
 }

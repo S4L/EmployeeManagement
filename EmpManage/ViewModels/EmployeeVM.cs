@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EMS.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -10,30 +12,23 @@ namespace EMS.UI.ViewModels
     public class EmployeeVM : BaseVM
     {
         private Guid _id;
-        private string _firstname;
-        private string _lastname;
-        private string _email;
-        private string _phone;
-        private string _department;
-        private string _gender;
-
         public Guid ID
         {
             get
             {
                 return _id;
             }
-
             set
             {
                 if (value != _id)
                 {
                     _id = value;
-                    NotifyPropertyChanged("ID");
+                    OnPropertyChanged("ID");
                 }
             }
         }
 
+        private string _firstname;
         public string FirstName
         {
             get
@@ -46,11 +41,12 @@ namespace EMS.UI.ViewModels
                 if (value != _firstname)
                 {
                     _firstname = value;
-                    NotifyPropertyChanged("Firstname");
+                    OnPropertyChanged("Firstname");
                 }
             }
         }
 
+        private string _lastname;
         public string LastName
         {
             get
@@ -63,11 +59,12 @@ namespace EMS.UI.ViewModels
                 if (value != _lastname)
                 {
                     _lastname = value;
-                    NotifyPropertyChanged("Lastname");
+                    OnPropertyChanged("Lastname");
                 }
             }
         }
 
+        private string _email;
         public string Email
         {
             get
@@ -80,11 +77,12 @@ namespace EMS.UI.ViewModels
                 if (value != _email)
                 {
                     _email = value;
-                    NotifyPropertyChanged("Email");
+                    OnPropertyChanged("Email");
                 }
             }
         }
 
+        private string _phone;
         public string Phone
         {
             get
@@ -97,11 +95,12 @@ namespace EMS.UI.ViewModels
                 if (value != _phone)
                 {
                     _phone = value;
-                    NotifyPropertyChanged("Phone");
+                    OnPropertyChanged("Phone");
                 }
             }
         }
 
+        private string _department;
         public string Department
         {
             get
@@ -114,11 +113,12 @@ namespace EMS.UI.ViewModels
                 if (value != _department)
                 {
                     _department = value;
-                    NotifyPropertyChanged("Department");
+                    OnPropertyChanged("Department");
                 }
             }
         }
 
+        private string _gender;
         public string Gender
         {
             get
@@ -131,10 +131,55 @@ namespace EMS.UI.ViewModels
                 if (value != _gender)
                 {
                     _gender = value;
-                    NotifyPropertyChanged("Gender");
+                    OnPropertyChanged("Gender");
                 }
             }
         }
+
+        private static ObservableCollection<EmployeeVM> _employees;
+        public static ObservableCollection<EmployeeVM> Employees
+        {
+            get
+            {
+                if(_employees == null)
+                {
+                    var uiService = new UIService();
+                    _employees = new ObservableCollection<EmployeeVM>(uiService.GetUIEmployees());
+                }
+                return _employees;
+            }
+
+            set
+            {
+                if (value != _employees)
+                {
+                    _employees = value;
+                }
+            }
+        }
+
+        private ObservableCollection<Department> _departments;
+        public ObservableCollection<Department> Departments
+        {
+            get
+            {
+                if (_departments == null)
+                {
+                    var uiService = new UIService();
+                    _departments = new ObservableCollection<Department>(uiService.GetUIDepartments());
+                }
+                return _departments;
+            }
+            set
+            {
+                if (value != _departments)
+                {
+                    _departments = value;
+                }
+            }
+        }
+
+        public static EmployeeVM SelectedEmployee { get; set; }
     }
 }
 

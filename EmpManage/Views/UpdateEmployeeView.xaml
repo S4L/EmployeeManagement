@@ -21,7 +21,6 @@
 
             <Border Padding="20">
                 <StackPanel>
-                    <TextBlock Margin="0,0,0,20" Text="ID:" FontSize="15"/>
                     <TextBlock Margin="0,0,0,20" Text="First Name:" FontSize="15"/>
                     <TextBlock Margin="0,0,0,20" Text="Last Name:" FontSize="15"/>
                     <TextBlock Margin="0,0,0,20" Text="Email:" FontSize="15"/>
@@ -33,13 +32,12 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBlock Padding="2" Width="250" HorizontalAlignment="Left" Name="IdTBlock" Margin="0,0,0,20"  Text="{Binding NewEmployee.ID, Mode=OneWayToSource}" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.FirstName, Mode=OneWayToSource}" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.LastName, Mode=OneWayToSource}" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Email, Mode=OneWayToSource}"/>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Phone, Mode=OneWayToSource}"/>
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding NewEmployee.Department, Mode=OneWayToSource}"  ItemsSource="{Binding ObservableDepartments}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox"  Margin="0,0,0,20" Text="{Binding NewEmployee.Gender, Mode=OneWayToSource}" >
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.FirstName}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.LastName}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Email}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Phone}"/>
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.Departments}"  ItemsSource="{Binding EmployeeVM.Departments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox"  Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Gender}" >
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>

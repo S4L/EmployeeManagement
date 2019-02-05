@@ -33,15 +33,13 @@ namespace EMS.InMemoryDAL
 
         public bool DeleteEmployee(Guid employeeID)
         {
-            bool isDeleted = false;
-
             if (_employees.Employees.Exists(e => e.ID == employeeID))
             {
                 _employees.Employees.Remove(_employees.Employees.Find(e => e.ID == employeeID));
-                isDeleted = true;
+                return true;
             }
 
-            return isDeleted;
+            return false;
         }
 
         public List<Employee> GetAllEmployees()

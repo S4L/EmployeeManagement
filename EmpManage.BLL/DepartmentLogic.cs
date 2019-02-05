@@ -20,12 +20,12 @@ namespace EMS.Logics
             return _departmentData.GetAllDepartments();
         }
 
-        public string GetDepartmentNameByID(int id)
+        public string GetDepartmentNameByID(Guid id)
         {
             return _departmentData.GetDepartmentNameByID(id);
         }
 
-        public int GetDepartmentIDByName(string name)
+        public Guid GetDepartmentIDByName(string name)
         {
             return _departmentData.GetDepartmentIDByName(name);
         }

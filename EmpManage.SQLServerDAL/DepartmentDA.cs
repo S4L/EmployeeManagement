@@ -32,7 +32,7 @@ namespace EMS.SQLServerDAL
                             {
                                 departments.Add(new Department
                                 {
-                                    ID = (int)reader["ID"],
+                                    ID = new Guid((string)reader["ID"]),
                                     Name = (string)reader["Name"]
                                 });
                             }
@@ -48,9 +48,8 @@ namespace EMS.SQLServerDAL
             }
         }
 
-        public int GetDepartmentIDByName(string name)
+        public Guid GetDepartmentIDByName(string name)
         {
-            int id = 0;
             using (var connection = new SqlConnection(ConnectionString))
             {
                 try
@@ -62,20 +61,19 @@ namespace EMS.SQLServerDAL
                     };
                     command.Parameters.Add("@Name", SqlDbType.VarChar).Value = name;
 
-                    id = (int)command.ExecuteScalar();
-                    return id;
+                    return new Guid((string)command.ExecuteScalar());
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.ToString());
-                    return id;
+                    return Guid.Empty;
                 }
             }
 
 
         }
 
-        public string GetDepartmentNameByID(int id)
+        public string GetDepartmentNameByID(Guid id)
         {
             string departmentName = "";
             using (var connection = new SqlConnection(ConnectionString))
