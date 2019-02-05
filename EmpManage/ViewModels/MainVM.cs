@@ -18,10 +18,10 @@ namespace EMS.UI.ViewModels
         public MainVM()
         {
             //Command new instances
-            OpenNewEmployeeCommand = new OpenNewEmployeeViewCmd(this);
-            DeleteEmployeeCommand = new DeleteEmployeeCmd(this);
+            //OpenNewEmployeeCommand = new AddCommand(this);
+            //DeleteEmployeeCommand = new DeleteEmployeeCmd(this);
 
-            EmployeeList = new ObservableCollection<EmployeeVM>(GetEmployees());
+            //EmployeeList = new ObservableCollection<EmployeeVM>(GetEmployees());
         }
 
         #region Properties
@@ -38,23 +38,23 @@ namespace EMS.UI.ViewModels
         public ICommand DeleteEmployeeCommand { get; }
         #endregion
 
-        private List<EmployeeVM> GetEmployees()
-        {
-            var employees = new List<Employee>(EmployeeTool.GetAllEmployees());
-            var employeesVM = new List<EmployeeVM>();
-            foreach (var employee in employees)
-                employeesVM.Add(new EmployeeVM
-                {
-                    ID = employee.ID,
-                    FirstName = employee.FirstName,
-                    LastName = employee.LastName,
-                    Email = employee.Email,
-                    Phone = employee.Phone,
-                    Department = DepartmentTool.GetDepartmentNameByID(employee.DepartmentId)
-                });
+        //private List<EmployeeVM> GetEmployees()
+        //{
+        //    var employees = new List<Employee>(EmployeeTool.GetAllEmployees());
+        //    var employeesVM = new List<EmployeeVM>();
+        //    foreach (var employee in employees)
+        //        employeesVM.Add(new EmployeeVM
+        //        {
+        //            ID = employee.ID,
+        //            FirstName = employee.FirstName,
+        //            LastName = employee.LastName,
+        //            Email = employee.Email,
+        //            Phone = employee.Phone,
+        //            Department = DepartmentTool.GetDepartmentNameByID(employee.DepartmentId)
+        //        });
 
-            return employeesVM;
-        }
+        //    return employeesVM;
+        //}
 
         public void OpenNewEmployeeWindow()
         {
@@ -72,13 +72,13 @@ namespace EMS.UI.ViewModels
             }
         }
 
-        public void DeleteSelectedEmployee()
-        {
-            if (EmployeeTool.DeleteEmployee(SelectedEmployee.ID))
-            {
-                MessageBox.Show("Delete Successful!");
-                EmployeeList.Remove(SelectedEmployee);
-            }
-        }
+        //public void DeleteSelectedEmployee()
+        //{
+        //    if (EmployeeTool.DeleteEmployee(SelectedEmployee.ID))
+        //    {
+        //        MessageBox.Show("Delete Successful!");
+        //        EmployeeList.Remove(SelectedEmployee);
+        //    }
+        //}
     }
 }

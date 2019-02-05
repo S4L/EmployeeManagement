@@ -1,4 +1,5 @@
 ﻿using EMS.Models;
+using System;
 using System.Collections.Generic;
 
 namespace EMS.Interfaces
@@ -6,8 +7,8 @@ namespace EMS.Interfaces
     public interface IDepartment
     {
         List<Department> GetAllDepartments();
-        string GetDepartmentNameByID(int id);
+        string GetDepartmentNameByID(Guid id);
         //void AddDepartment(Department department);
-        int GetDepartmentIDByName(string name);
+        Guid GetDepartmentIDByName(string name);
     }
 }

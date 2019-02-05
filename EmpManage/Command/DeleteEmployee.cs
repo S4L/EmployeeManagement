@@ -8,13 +8,13 @@ using System.Windows.Input;
 
 namespace EMS.UI.Command
 {
-    public class DeleteEmployeeCmd : ICommand
+    public class DeleteEmployee : ICommand
     {
-        private MainVM _viewmodel;
+        private UIService _uiService;
 
-        public DeleteEmployeeCmd(MainVM viewModel)
+        public DeleteEmployee(UIService service)
         {
-            _viewmodel = viewModel;
+            _uiService = service;
         }
 
         public event EventHandler CanExecuteChanged
@@ -25,7 +25,7 @@ namespace EMS.UI.Command
 
         public bool CanExecute(object parameter)
         {
-            if (MainVM.SelectedEmployee != null)
+            if (EmployeeVM.SelectedEmployee != null)
             {
                 return true;
             }
@@ -37,7 +37,7 @@ namespace EMS.UI.Command
 
         public void Execute(object parameter)
         {
-            _viewmodel.DeleteSelectedEmployee();
+            _uiService.DeleteEmployee();
         }
     }
 }

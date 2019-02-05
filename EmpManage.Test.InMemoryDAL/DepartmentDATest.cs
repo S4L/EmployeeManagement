@@ -15,11 +15,11 @@ namespace EmpManage.Test.InMemoryDAL
     {
         List<Department> departments = new List<Department>
         {
-            new Department{ID = 1, Name ="Sales"},
-            new Department{ID = 2, Name ="Customer Support"},
-            new Department{ID = 3, Name ="IT"},
-            new Department{ID = 4, Name ="Quality Assurance"},
-            new Department{ID = 5, Name ="Finance"}
+            new Department{ID = new Guid("C094B719-B0B8-4501-BD61-BC6EAC2442B4"), Name ="Sales"},
+            new Department{ID = new Guid("5C87B6AD-4A6D-48E5-80AA-561BBE861774"), Name ="Customer Support"},
+            new Department{ID = new Guid("EB0B3BA2-C0C8-4EA4-9287-B9DE848A668D"), Name ="IT"},
+            new Department{ID = new Guid("79F1CDAF-CAD9-49C4-BC04-D991480F7CF2"), Name ="Quality Assurance"},
+            new Department{ID = new Guid("04CEEA7B-A771-4584-B9A7-BB465672E629"), Name ="Finance"}
         };
         #region Additional test attributes
         //
@@ -49,7 +49,7 @@ namespace EmpManage.Test.InMemoryDAL
         [DataRow("IT", 3)]
         [DataRow("Quality Assurance", 4)]
         [DataRow("Finance", 5)]
-        public void GetDepartmentNameByDepartmentID_SameDepartmentName_CorrectDepartmentID(string expectedName, int departmentID)
+        public void GetDepartmentNameByDepartmentID_SameDepartmentName_CorrectDepartmentID(string expectedName, Guid departmentID)
         {
             Assert.AreEqual(expectedName, departments.Find(d => d.ID == departmentID)?.Name ?? "");
         }
@@ -59,7 +59,7 @@ namespace EmpManage.Test.InMemoryDAL
         [DataRow(8)]
         [DataRow(7)]
         [DataRow(9)]
-        public void GetDepartmentNameByDepartmentID_ReturnEmptyString_IncorrectDepartmentID(int departmentID)
+        public void GetDepartmentNameByDepartmentID_ReturnEmptyString_IncorrectDepartmentID(Guid departmentID)
         {
             Assert.AreEqual("", departments.Find(d => d.ID == departmentID)?.Name ?? "");
         }

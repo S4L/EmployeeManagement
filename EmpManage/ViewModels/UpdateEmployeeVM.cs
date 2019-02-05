@@ -12,20 +12,20 @@ using System.Windows.Input;
 
 namespace EMS.UI.ViewModels
 {
-    public class UpdateEmployeeVM:BaseVM
+    public class UpdateEmployeeVM : BaseVM
     {
         private EmployeeVM _newEmployee;
 
         public UpdateEmployeeVM()
         {
-            UpdateEmployeeCommand = new UpdateEmployeeCmd(this);
+            UpdateEmployeeCommand = new UpdateEmployee(this);
             NewEmployee = new EmployeeVM();
             IsUpdate = false;
         }
 
         #region Properties
         public bool IsUpdate { get; set; }
-        public ObservableCollection<Department> ObservableDepartments => new ObservableCollection<Department>(DepartmentTool.GetAllDepartments());
+        //public ObservableCollection<Department> ObservableDepartments => new ObservableCollection<Department>(DepartmentTool.GetAllDepartments());
         public EmployeeVM NewEmployee
         {
             get
@@ -37,7 +37,7 @@ namespace EMS.UI.ViewModels
                 if (_newEmployee != value)
                 {
                     _newEmployee = value;
-                    NotifyPropertyChanged("NewEmployee");
+                    OnPropertyChanged("NewEmployee");
                 }
             }
         }
@@ -47,38 +47,38 @@ namespace EMS.UI.ViewModels
         public ICommand UpdateEmployeeCommand { get; set; }
         #endregion
 
-        public void UpdateChanges()
-        {
-            try
-            {
-                var employee = new Employee
-                {
-                    ID = NewEmployee.ID,
-                    FirstName = NewEmployee.FirstName,
-                    LastName = NewEmployee.LastName,
-                    Email = NewEmployee.Email,
-                    Phone = NewEmployee.Phone,
-                    DepartmentId = DepartmentTool.GetDepartmentIDByName(NewEmployee.Department),
-                    Gender = NewEmployee.Gender
-                };
+        //public void UpdateChanges()
+        //{
+        //    try
+        //    {
+        //        var employee = new Employee
+        //        {
+        //            ID = NewEmployee.ID,
+        //            FirstName = NewEmployee.FirstName,
+        //            LastName = NewEmployee.LastName,
+        //            Email = NewEmployee.Email,
+        //            Phone = NewEmployee.Phone,
+        //            DepartmentId = DepartmentTool.GetDepartmentIDByName(NewEmployee.Department),
+        //            Gender = NewEmployee.Gender
+        //        };
 
-                if (EmployeeTool.UpdateEmployee(NewEmployee.ID, employee))
-                {
-                    IsUpdate = true;
-                    MessageBox.Show("Update Completed!");
+        //        if (EmployeeTool.UpdateEmployee(NewEmployee.ID, employee))
+        //        {
+        //            IsUpdate = true;
+        //            MessageBox.Show("Update Completed!");
 
-                    //Update selected item in UI List
-                    UpdateSelectedItemInView();
+        //            //Update selected item in UI List
+        //            UpdateSelectedItemInView();
 
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                IsUpdate = false;
-                MessageBox.Show("Update Failed!");
-            }
-        }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine(ex.ToString());
+        //        IsUpdate = false;
+        //        MessageBox.Show("Update Failed!");
+        //    }
+        //}
 
         public void UpdateSelectedItemInView()
         {

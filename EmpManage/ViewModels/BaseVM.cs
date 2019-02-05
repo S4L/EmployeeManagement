@@ -9,14 +9,11 @@ using System.Threading.Tasks;
 
 namespace EMS.UI.ViewModels
 {
-    public class BaseVM : INotifyPropertyChanged
-    {
-        public EmployeeLogic EmployeeTool => new EmployeeLogic();
-        public DepartmentLogic DepartmentTool => new DepartmentLogic();
-
+    public abstract class BaseVM : INotifyPropertyChanged
+    { 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void NotifyPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {

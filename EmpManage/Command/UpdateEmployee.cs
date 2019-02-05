@@ -8,10 +8,10 @@ using System.Windows.Input;
 
 namespace EMS.UI.Command
 {
-    public class UpdateEmployeeCmd : ICommand
+    public class UpdateEmployee : ICommand
     {
         private UpdateEmployeeVM _viewModel;
-        public UpdateEmployeeCmd(UpdateEmployeeVM viewModel)
+        public UpdateEmployee(UpdateEmployeeVM viewModel)
         {
             _viewModel = viewModel;
         }
@@ -29,7 +29,7 @@ namespace EMS.UI.Command
 
         public void Execute(object parameter)
         {
-            _viewModel.UpdateChanges();
+            //_viewModel.UpdateChanges();
         }
     }
 }

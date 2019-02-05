@@ -115,7 +115,7 @@ namespace EMS.SQLServerDAL
                                     LastName = (string)reader["Lastname"],
                                     Email = (string)reader["Email"], // DBNull.Value
                                     Phone = (string)reader["Phone"],
-                                    DepartmentId = (int)reader["DepartmentID"],
+                                    DepartmentId = new Guid((string)reader["DepartmentID"]),
                                     Gender = (string)reader["Gender"]
                                 });
                             }
