@@ -18,7 +18,7 @@ namespace EMS.UI.ViewModels
 
         public UpdateEmployeeVM()
         {
-            UpdateEmployeeCommand = new UpdateEmployee(this);
+            //UpdateEmployeeCommand = new UpdateEmployee(this);
             NewEmployee = new EmployeeVM();
             IsUpdate = false;
         }

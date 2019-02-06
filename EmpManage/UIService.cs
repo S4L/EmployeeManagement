@@ -19,6 +19,7 @@ namespace EMS.UI
             OpenAddWindowCmd = new Command.OpenAddWindow(this);
             DeleteEmployeeCmd = new Command.DeleteEmployee(this);
             AddEmployeeCmd = new Command.AddEmployee(this);
+            EditEmployeeCmd = new Command.UpdateEmployee(this);
             EmployeeVM = new EmployeeVM();
         }
 
@@ -26,12 +27,14 @@ namespace EMS.UI
         public ICommand OpenAddWindowCmd { get; }
         public ICommand DeleteEmployeeCmd { get; }
         public ICommand AddEmployeeCmd { get; }
+        public ICommand EditEmployeeCmd { get; }
         #endregion
 
-        //Properties
+        #region Properties
         public EmployeeLogic EmployeeTool => new EmployeeLogic();
         public DepartmentLogic DepartmentTool => new DepartmentLogic();
         public EmployeeVM EmployeeVM { get; set; }
+        #endregion
 
         internal List<Department> GetUIDepartments()
         {
@@ -50,7 +53,8 @@ namespace EMS.UI
                     LastName = employee.LastName,
                     Email = employee.Email,
                     Phone = employee.Phone,
-                    Department = DepartmentTool.GetDepartmentNameByID(employee.DepartmentId)
+                    Department = DepartmentTool.GetDepartmentNameByID(employee.DepartmentId),
+                    Gender = employee.Gender
                 });
 
             return employeesVM;
@@ -91,6 +95,24 @@ namespace EMS.UI
                 EmployeeVM.Employees.Add(EmployeeVM);
             }     
         }
+
+        internal void UpdateEmployee()
+        {
+            var updateEmployee = new Employee
+            {
+                ID = EmployeeVM.SelectedEmployee.ID,
+                FirstName = EmployeeVM.SelectedEmployee.FirstName,
+                LastName = EmployeeVM.SelectedEmployee.LastName,
+                Email = EmployeeVM.SelectedEmployee.Email,
+                Phone = EmployeeVM.SelectedEmployee.Phone,
+                DepartmentId = DepartmentTool.GetDepartmentIDByName((string)EmployeeVM.SelectedEmployee.Department),
+                Gender = EmployeeVM.SelectedEmployee.Gender
+            };
+
+            EmployeeTool.UpdateEmployee(updateEmployee);
+        }
+
+        
 
         
     }
