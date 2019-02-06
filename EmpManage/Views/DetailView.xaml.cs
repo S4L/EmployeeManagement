@@ -1,5 +1,4 @@
-﻿using EMS.UI.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +15,17 @@ using System.Windows.Shapes;
 namespace EMS.UI.Views
 {
     /// <summary>
-    /// Interaction logic for UpdateEmployeeView.xaml
+    /// Interaction logic for DetailView.xaml
     /// </summary>
-    public partial class UpdateEmployeeView : Window
+    public partial class DetailView : Window
     {
-        public UpdateEmployeeView()
+        public DetailView()
         {
             InitializeComponent();
             DataContext = new UIService();
         }
 
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

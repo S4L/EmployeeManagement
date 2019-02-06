@@ -56,13 +56,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command\OpenUpdateWindow.cs" />
     <Compile Include="UIService.cs" />
+    <Compile Include="Views\DetailView.xaml.cs">
+      <DependentUpon>DetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NewEmployeeView.xaml.cs">
       <DependentUpon>NewEmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UpdateEmployeeView.xaml.cs">
       <DependentUpon>UpdateEmployeeView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\DetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,9 +85,6 @@
     <Compile Include="Command\AddEmployee.cs" />
     <Compile Include="ViewModels\EmployeeVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
-    <Compile Include="ViewModels\MainVM.cs" />
-    <Compile Include="ViewModels\NewEmployeeVM.cs" />
-    <Compile Include="ViewModels\UpdateEmployeeVM.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

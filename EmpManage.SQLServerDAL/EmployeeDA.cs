@@ -131,7 +131,37 @@ namespace EMS.SQLServerDAL
             return null;
         }
 
-        public bool UpdateEmployee(Guid employeeID, Employee employee)
+        //public bool UpdateEmployee(Guid employeeID, Employee employee)
+        //{
+        //    using (var connection = new SqlConnection(ConnectionString))
+        //    {
+        //        try
+        //        {
+        //            connection.Open();
+        //            SqlCommand command = new SqlCommand("spUpdateEmployee", connection)
+        //            {
+        //                CommandType = System.Data.CommandType.StoredProcedure
+        //            };
+
+        //            command.Parameters.Add("@ID", SqlDbType.UniqueIdentifier).Value = employee.ID;
+        //            command.Parameters.Add("@Firstname", SqlDbType.VarChar).Value = employee.FirstName;
+        //            command.Parameters.Add("@Lastname", SqlDbType.VarChar).Value = employee.LastName;
+        //            command.Parameters.Add("@Email", SqlDbType.VarChar).Value = employee.Email;
+        //            command.Parameters.Add("@Phone", SqlDbType.VarChar).Value = employee.Phone;
+        //            command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
+
+        //            command.ExecuteNonQuery();
+        //            return true;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Debug.WriteLine(ex.ToString());
+        //            return false;
+        //        }
+        //    }
+        //}
+
+        public bool UpdateEmployee(Employee employee)
         {
             using (var connection = new SqlConnection(ConnectionString))
             {
@@ -159,11 +189,6 @@ namespace EMS.SQLServerDAL
                     return false;
                 }
             }
-        }
-
-        public bool UpdateEmployee(Employee employee)
-        {
-            throw new NotImplementedException();
         }
     }
 }

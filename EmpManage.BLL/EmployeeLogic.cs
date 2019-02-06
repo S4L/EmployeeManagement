@@ -8,14 +8,6 @@ namespace EMS.Logics
 {
     public class EmployeeLogic
     {
-
-        public EmployeeLogic ()
-        {
-            //_employeeData = TypeProvider.GetEmployeeDataProvider();
-        }
-
-        static object _lock = new object();
-
         private IEmployee _employeeData;
         private IEmployee EmployeeData
         {
@@ -23,18 +15,12 @@ namespace EMS.Logics
             {
                 if (_employeeData == null)
                 {
-                    lock (_lock)
+                    _employeeData = TypeProvider.EmployeeDataProvider;
+                    if (_employeeData == null)
                     {
-                        if (_employeeData == null)
-                        {
-                            _employeeData = TypeProvider.GetEmployeeDataProvider();
-                            if (_employeeData == null)
-                            {
-                                // log error...
+                        // log error...
 
-                                throw new NullReferenceException("Failed to instantiate ...");
-                            }
-                        }
+                        throw new NullReferenceException("Failed to instantiate ...");
                     }
                 }
                 return _employeeData;
@@ -46,20 +32,15 @@ namespace EMS.Logics
             return EmployeeData.GetAllEmployees();
         }
 
-        //public Employee GetEmployeeByID(Guid employeeID)
-        //{
-        //    return _employeeProvider.GetEmployeeByID(employeeID);
-        //}
-
         public bool AddEmployee(Employee employee)
         {
             return EmployeeData.AddEmployee(employee);
         }
 
-        public bool UpdateEmployee(Guid employeeID, Employee employee)
-        {
-            return EmployeeData.UpdateEmployee(employeeID, employee);
-        }
+        //public bool UpdateEmployee(Guid employeeID, Employee employee)
+        //{
+        //    return EmployeeData.UpdateEmployee(employeeID, employee);
+        //}
 
         public bool UpdateEmployee(Employee employee)
         {
@@ -69,11 +50,6 @@ namespace EMS.Logics
         public bool DeleteEmployee(Guid employeeID)
         {
             return EmployeeData.DeleteEmployee(employeeID);
-        }
-
-        public List<Employee> GetSpecificEmployees(Func<Employee, bool> func)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -24,12 +24,16 @@ namespace EMS.UI.Command
 
         public bool CanExecute(object parameter)
         {
-            return true; //TODO: Add conditions for updating employee
+            if(EmployeeVM.SelectedEmployee != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Execute(object parameter)
         {
-            //_viewModel.UpdateChanges();
+            _uiService.UpdateEmployee();
         }
     }
 }
