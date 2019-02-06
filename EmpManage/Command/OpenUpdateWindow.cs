@@ -1,5 +1,4 @@
-﻿using EMS.UI.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +7,10 @@ using System.Windows.Input;
 
 namespace EMS.UI.Command
 {
-    public class OpenAddWindow: ICommand
+    public class OpenUpdateWindow : ICommand
     {
         private UIService _uiService;
-
-        public OpenAddWindow(UIService service)
+        public OpenUpdateWindow(UIService service)
         {
             _uiService = service;
         }
@@ -21,12 +19,12 @@ namespace EMS.UI.Command
 
         public bool CanExecute(object parameter)
         {
-            return true; //TODO: Add condition to open
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            _uiService.OpenNewEmployeeWindow();
+            _uiService.OpenUpdateWindow();
         }
     }
 }

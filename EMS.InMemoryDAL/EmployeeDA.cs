@@ -51,45 +51,17 @@ namespace EMS.InMemoryDAL
             return null;
         }
 
-        public bool UpdateEmployee(Guid employeeID, Employee employee)
-        {
-            bool isUpdated = false;
-            try
-            {
-                _employees.Employees.Find(e => e.ID == employeeID).FirstName = employee.FirstName;
-                _employees.Employees.Find(e => e.ID == employeeID).LastName = employee.LastName;
-                _employees.Employees.Find(e => e.ID == employeeID).Email = employee.Email;
-                _employees.Employees.Find(e => e.ID == employeeID).Phone = employee.Phone;
-                _employees.Employees.Find(e => e.ID == employeeID).DepartmentId = employee.DepartmentId;
-                _employees.Employees.Find(e => e.ID == employeeID).Gender = employee.Gender;
-
-                var resultEmployee = _employees.Employees.Find(e => e.ID == employeeID);
-
-                if (_employees.Employees.Exists(e => e.ID == employee.ID && e.FirstName == employee.FirstName && e.LastName == employee.LastName && e.Email == employee.Email && e.Phone == employee.Phone))
-                {
-                    isUpdated = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                isUpdated = false;
-            }
-
-            return isUpdated;
-        }
-
         public bool UpdateEmployee(Employee employee)
         {
             try
             {
-                var presentEmployee = _employees.Employees.Find(e => e.ID == employee.ID);
-                var index = _employees.Employees.IndexOf(presentEmployee);
+                int index = _employees.Employees.FindIndex(e => e.ID == employee.ID);
                 if(index != -1)
                 {
                     _employees.Employees[index] = employee;
+                    return true;
                 }
-                return true;
+                return false;
             }
             catch(Exception e)
             {

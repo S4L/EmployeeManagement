@@ -20,6 +20,7 @@ namespace EMS.UI
             DeleteEmployeeCmd = new Command.DeleteEmployee(this);
             AddEmployeeCmd = new Command.AddEmployee(this);
             EditEmployeeCmd = new Command.UpdateEmployee(this);
+            OpenUpdateWindowCmd = new Command.OpenUpdateWindow(this);
             EmployeeVM = new EmployeeVM();
         }
 
@@ -28,6 +29,7 @@ namespace EMS.UI
         public ICommand DeleteEmployeeCmd { get; }
         public ICommand AddEmployeeCmd { get; }
         public ICommand EditEmployeeCmd { get; }
+        public ICommand OpenUpdateWindowCmd { get; set; }
         #endregion
 
         #region Properties
@@ -65,6 +67,12 @@ namespace EMS.UI
         {
             var newEmployeeView = new NewEmployeeView();
             newEmployeeView.ShowDialog();
+        }
+
+        internal void OpenUpdateWindow()
+        {
+            var updateView = new UpdateEmployeeView();
+            updateView.ShowDialog();
         }
 
         internal void DeleteEmployee()

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EMS.UI"
         mc:Ignorable="d"
-        Title="Employee Management" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Employee Management" Height="450" Width="450" ResizeMode="CanMinimize">
 
     <Window.Resources>
         <Style x:Key="MenuButtonStyle" TargetType="Button">
@@ -44,7 +44,7 @@
             </Grid.ColumnDefinitions>
 
             <Border Padding="10">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Margin="0,0,20,0" Content="ADD" Command="{Binding OpenAddWindowCmd}" Style="{StaticResource MenuButtonStyle}"/>
                     <Button Margin="0,0,20,0" Content="DELETE" Command="{Binding DeleteEmployeeCmd}" Style="{StaticResource MenuButtonStyle}"/>
                 </StackPanel>
@@ -63,8 +63,6 @@
                     <GridView>
                         <GridViewColumn Header="First Name" Width="110" DisplayMemberBinding="{Binding FirstName}"/>
                         <GridViewColumn Header="Last Name" Width="117" DisplayMemberBinding="{Binding LastName}"/>
-                        <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Email}"/>
-                        <GridViewColumn Header="Phone" Width="150" DisplayMemberBinding="{Binding Phone}"/>
                         <GridViewColumn Header="Department"  Width="210" DisplayMemberBinding="{Binding Department}"/>
                     </GridView>
                 </ListView.View>
