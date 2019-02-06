@@ -32,12 +32,12 @@
 
             <Border Padding="20" Grid.Column="1">
                 <StackPanel>
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.FirstName}" />
-                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.LastName}" />
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="FirstNameTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.FirstName}"/>
+                    <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="LastNameTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.LastName}"/>
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="EmailTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Email}"/>
                     <TextBox Padding="2" Width="250" HorizontalAlignment="Left" Name="PhoneTBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Phone}"/>
-                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.Departments}"  ItemsSource="{Binding EmployeeVM.Departments}" DisplayMemberPath="Name"/>
-                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox"  Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Gender}" >
+                    <ComboBox Padding="2" Width="150" HorizontalAlignment="Left" Name="DepartmentCBox" Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Department}" IsEditable="True" ItemsSource="{Binding EmployeeVM.Departments}" DisplayMemberPath="Name"/>
+                    <ComboBox Padding="2" Width="100" HorizontalAlignment="Left" Name="GenderCBox"  Margin="0,0,0,20" Text="{Binding EmployeeVM.SelectedEmployee.Gender}" IsEditable="True" >
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>
@@ -46,7 +46,7 @@
         </Grid>
 
         <Border Grid.Row="1" Padding="15">
-            <Button Background="BlanchedAlmond" Content="Update" Width="200" Command="{Binding UpdateEmployeeCommand }" Click="UpdateButton_Click"/>
+            <Button Background="BlanchedAlmond" Content="Update" Width="200" Command="{Binding EditEmployeeCmd }" Click="UpdateButton_Click"/>
         </Border>
     </Grid>
 </Window>

@@ -78,5 +78,23 @@ namespace EMS.InMemoryDAL
 
             return isUpdated;
         }
+
+        public bool UpdateEmployee(Employee employee)
+        {
+            try
+            {
+                var presentEmployee = _employees.Employees.Find(e => e.ID == employee.ID);
+                var index = _employees.Employees.IndexOf(presentEmployee);
+                if(index != -1)
+                {
+                    _employees.Employees[index] = employee;
+                }
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }            
+        } 
     }
 }

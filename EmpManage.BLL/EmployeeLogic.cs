@@ -61,6 +61,11 @@ namespace EMS.Logics
             return EmployeeData.UpdateEmployee(employeeID, employee);
         }
 
+        public bool UpdateEmployee(Employee employee)
+        {
+            return EmployeeData.UpdateEmployee(employee);
+        }
+
         public bool DeleteEmployee(Guid employeeID)
         {
             return EmployeeData.DeleteEmployee(employeeID);

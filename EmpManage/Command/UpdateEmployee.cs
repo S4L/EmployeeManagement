@@ -10,10 +10,10 @@ namespace EMS.UI.Command
 {
     public class UpdateEmployee : ICommand
     {
-        private UpdateEmployeeVM _viewModel;
-        public UpdateEmployee(UpdateEmployeeVM viewModel)
+        private UIService _uiService;
+        public UpdateEmployee(UIService service)
         {
-            _viewModel = viewModel;
+            _uiService = service;
         }
 
         public event EventHandler CanExecuteChanged

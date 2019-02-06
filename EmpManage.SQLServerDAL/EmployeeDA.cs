@@ -160,5 +160,10 @@ namespace EMS.SQLServerDAL
                 }
             }
         }
+
+        public bool UpdateEmployee(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

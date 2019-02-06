@@ -179,7 +179,22 @@ namespace EMS.UI.ViewModels
             }
         }
 
-        public static EmployeeVM SelectedEmployee { get; set; }
+        private static EmployeeVM _selectedEmployee;
+        public static EmployeeVM SelectedEmployee
+        {
+            get
+            {
+                return _selectedEmployee;
+            }
+
+            set
+            {
+                if(value != _selectedEmployee)
+                {
+                    _selectedEmployee = value;
+                }
+            }
+        }
     }
 }
 
